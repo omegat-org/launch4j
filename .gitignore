@@ -3,3 +3,7 @@
 demo/ModuleApp/mlib
 demo/ModuleApp/mods
 demo/ModuleApp/ModuleApp
+
+# gradle
+build
+.gradle
