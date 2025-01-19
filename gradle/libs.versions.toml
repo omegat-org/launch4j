@@ -3,17 +3,17 @@
 
 [versions]
 com-formdev-flatlaf = "1.0"
-com-jgoodies-forms = "1.2.1"
-com-jgoodies-jgoodies-common = "1.7.0"
-com-thoughtworks-xstream-xstream = "1.4.15"
+com-jgoodies-forms = "1.9.0"
+com-jgoodies-jgoodies-common = "1.8.1"
+com-thoughtworks-xstream-xstream = "1.4.21"
 commons-beanutils-commons-beanutils = "1.9.4"
 commons-logging-commons-logging = "1.2"
 net-java-abeille-abeille = "3.0"
-org-apache-ant-ant = "1.10.9"
+org-apache-ant-ant = "1.10.11"
 
 [libraries]
 com-formdev-flatlaf = { module = "com.formdev:flatlaf", version.ref = "com-formdev-flatlaf" }
-com-jgoodies-forms = { module = "com.jgoodies:forms", version.ref = "com-jgoodies-forms" }
+com-jgoodies-forms = { module = "com.jgoodies:jgoodies-forms", version.ref = "com-jgoodies-forms" }
 com-jgoodies-jgoodies-common = { module = "com.jgoodies:jgoodies-common", version.ref = "com-jgoodies-jgoodies-common" }
 com-thoughtworks-xstream-xstream = { module = "com.thoughtworks.xstream:xstream", version.ref = "com-thoughtworks-xstream-xstream" }
 commons-beanutils-commons-beanutils = { module = "commons-beanutils:commons-beanutils", version.ref = "commons-beanutils-commons-beanutils" }
