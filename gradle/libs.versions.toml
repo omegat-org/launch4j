@@ -8,7 +8,6 @@ com-jgoodies-jgoodies-common = "1.8.1"
 com-thoughtworks-xstream-xstream = "1.4.21"
 commons-beanutils-commons-beanutils = "1.9.4"
 commons-logging-commons-logging = "1.2"
-net-java-abeille-abeille = "3.0"
 org-apache-ant-ant = "1.10.11"
 
 [libraries]
