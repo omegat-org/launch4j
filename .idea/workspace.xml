@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1adbc4bb-44f9-4f98-8be1-ed2c5323a80e" name="Changes" comment="chore: idea files&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="1adbc4bb-44f9-4f98-8be1-ed2c5323a80e" name="Changes" comment="Add README and update license&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;">
       <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -96,35 +95,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.launch4j [assemble].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.launch4j [build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.launch4j [check].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.launch4j [coreJar].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.launch4j [jar].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.launch4j [packageAll].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.launch4j [platformJar].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.launch4j [publishToMavenLocal].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.launch4j [testClasses].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.launch4j:launch4j-workdir [publishToMavenLocal].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/miurahr/IdeaProjects/launch4j/settings.gradle.kts&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.launch4j [assemble].executor": "Run",
+    "Gradle.launch4j [build].executor": "Run",
+    "Gradle.launch4j [check].executor": "Run",
+    "Gradle.launch4j [coreJar].executor": "Run",
+    "Gradle.launch4j [jar].executor": "Run",
+    "Gradle.launch4j [packageAll].executor": "Run",
+    "Gradle.launch4j [platformJar].executor": "Run",
+    "Gradle.launch4j [publishToMavenLocal].executor": "Run",
+    "Gradle.launch4j [publish].executor": "Run",
+    "Gradle.launch4j [testClasses].executor": "Run",
+    "Gradle.launch4j:launch4j-workdir [publishToMavenLocal].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/miurahr/IdeaProjects/launch4j/settings.gradle.kts",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -141,29 +141,7 @@
       <recent name="$PROJECT_DIR$/launch4j-workdir/platforms/macosx-x86/bin" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.launch4j [platformJar]">
-    <configuration name="launch4j [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="build" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Gradle.launch4j [publish]">
     <configuration name="launch4j [check]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -230,6 +208,28 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="launch4j [publish]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="publish" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="launch4j [testClasses]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -254,11 +254,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.launch4j [publish]" />
         <item itemvalue="Gradle.launch4j [platformJar]" />
         <item itemvalue="Gradle.launch4j [testClasses]" />
         <item itemvalue="Gradle.launch4j [publishToMavenLocal]" />
         <item itemvalue="Gradle.launch4j [check]" />
-        <item itemvalue="Gradle.launch4j [build]" />
       </list>
     </recent_temporary>
   </component>
@@ -285,7 +285,7 @@
       <workItem from="1737186925780" duration="769000" />
       <workItem from="1737195578941" duration="1023000" />
       <workItem from="1737250820502" duration="15582000" />
-      <workItem from="1737267619658" duration="1184000" />
+      <workItem from="1737267619658" duration="6613000" />
     </task>
     <task id="LOCAL-00001" summary="Support build on linux-aarch64&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;">
       <option name="closed" value="true" />
@@ -455,7 +455,63 @@
       <option name="project" value="LOCAL" />
       <updated>1737268381776</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="workdir package&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;">
+      <option name="closed" value="true" />
+      <created>1737268893454</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1737268893454</updated>
+    </task>
+    <task id="LOCAL-00023" summary="idea files&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;">
+      <option name="closed" value="true" />
+      <created>1737268899715</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1737268899715</updated>
+    </task>
+    <task id="LOCAL-00024" summary="chore: publish to sonatype OSSRH&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;">
+      <option name="closed" value="true" />
+      <created>1737269280909</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1737269280909</updated>
+    </task>
+    <task id="LOCAL-00025" summary="chore: update IDE files&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;">
+      <option name="closed" value="true" />
+      <created>1737269312091</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1737269312091</updated>
+    </task>
+    <task id="LOCAL-00026" summary="chore: clean unused version reference &#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;">
+      <option name="closed" value="true" />
+      <created>1737269407176</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1737269407176</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Version to be &lt;origin&gt;.&lt;forked&gt; now as 3.50.1&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;">
+      <option name="closed" value="true" />
+      <created>1737288363688</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1737288363688</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Add README and update license&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;">
+      <option name="closed" value="true" />
+      <created>1737288857416</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1737288857416</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -466,7 +522,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -488,9 +556,15 @@
     <MESSAGE value="remove build-logic&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;" />
     <MESSAGE value="intellij idea file&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;" />
     <MESSAGE value="chore: set basic property from gradle.properties&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;" />
-    <MESSAGE value="chore: update IDE files&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;" />
     <MESSAGE value="refactor: remove unnecessary boxing&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;" />
     <MESSAGE value="chore: idea files&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: idea files&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;" />
+    <MESSAGE value="workdir package&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;" />
+    <MESSAGE value="idea files&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;" />
+    <MESSAGE value="chore: publish to sonatype OSSRH&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;" />
+    <MESSAGE value="chore: update IDE files&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;" />
+    <MESSAGE value="chore: clean unused version reference &#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;" />
+    <MESSAGE value="Version to be &lt;origin&gt;.&lt;forked&gt; now as 3.50.1&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;" />
+    <MESSAGE value="Add README and update license&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add README and update license&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;" />
   </component>
 </project>
