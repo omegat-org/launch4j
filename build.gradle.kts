@@ -11,7 +11,13 @@ plugins {
 
 val workdir = "src/workdir"
 
-val platforms = listOf( "linux", "linux-x64", "linux-aarch64", "macosx-x86", "win32" )
+val platforms = listOf(
+    "linux32", // linux i686
+    "linux64", // linux amd64
+    "linux",   // linux aarch64
+    "macosx-x86",  // mac amd64
+    "win32"  // windows 32bit
+)
 
 repositories {
     mavenCentral()
