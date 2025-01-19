@@ -95,36 +95,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.launch4j [assemble].executor": "Run",
-    "Gradle.launch4j [build].executor": "Run",
-    "Gradle.launch4j [check].executor": "Run",
-    "Gradle.launch4j [coreJar].executor": "Run",
-    "Gradle.launch4j [jar].executor": "Run",
-    "Gradle.launch4j [packageAll].executor": "Run",
-    "Gradle.launch4j [platformJar].executor": "Run",
-    "Gradle.launch4j [publishToMavenLocal].executor": "Run",
-    "Gradle.launch4j [publish].executor": "Run",
-    "Gradle.launch4j [testClasses].executor": "Run",
-    "Gradle.launch4j:launch4j-workdir [publishToMavenLocal].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/miurahr/IdeaProjects/launch4j/settings.gradle.kts",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.launch4j [assemble].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.launch4j [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.launch4j [check].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.launch4j [coreJar].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.launch4j [jar].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.launch4j [packageAll].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.launch4j [platformJar].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.launch4j [publishToMavenLocal].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.launch4j [publish].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.launch4j [testClasses].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.launch4j:launch4j-workdir [publishToMavenLocal].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/miurahr/IdeaProjects/launch4j/settings.gradle.kts&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
