@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1adbc4bb-44f9-4f98-8be1-ed2c5323a80e" name="Changes" comment="chore: idea files&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/launch4j-workdir">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="launch4j" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="launch4j" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="launch4j" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="launch4j" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="publishing" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="launch4j" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="verification" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="package-info" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;miurahr&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:omegat-org/launch4j.git&quot;,
+    &quot;accountId&quot;: &quot;55c1c4ff-5f72-423a-bf4d-4f0ae58cdefb&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2rkVG1JaroXT1c57flJCnLYdIS3" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.launch4j [assemble].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.launch4j [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.launch4j [check].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.launch4j [coreJar].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.launch4j [jar].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.launch4j [packageAll].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.launch4j [platformJar].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.launch4j [publishToMavenLocal].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.launch4j [testClasses].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.launch4j:launch4j-workdir [publishToMavenLocal].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/miurahr/IdeaProjects/launch4j/settings.gradle.kts&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/launch4j" />
+      <recent name="$PROJECT_DIR$/launch4j-gui" />
+      <recent name="$PROJECT_DIR$/launch4j-cli" />
+      <recent name="$PROJECT_DIR$/demo/SimpleApp" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/net/sf/launch4j/formimpl" />
+      <recent name="$PROJECT_DIR$/src/workdir" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/launch4j-workdir/src" />
+      <recent name="$PROJECT_DIR$/launch4j-workdir/platforms/macosx-x86/bin" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Gradle.launch4j [platformJar]">
+    <configuration name="launch4j [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="launch4j [check]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="check" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="launch4j [platformJar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="platformJar" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="launch4j [publishToMavenLocal]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="publishToMavenLocal" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="launch4j [testClasses]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="testClasses" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.launch4j [platformJar]" />
+        <item itemvalue="Gradle.launch4j [testClasses]" />
+        <item itemvalue="Gradle.launch4j [publishToMavenLocal]" />
+        <item itemvalue="Gradle.launch4j [check]" />
+        <item itemvalue="Gradle.launch4j [build]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.218" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.218" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1adbc4bb-44f9-4f98-8be1-ed2c5323a80e" name="Changes" comment="" />
+      <created>1737102960855</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1737102960855</updated>
+      <workItem from="1737102961991" duration="968000" />
+      <workItem from="1737104101613" duration="379000" />
+      <workItem from="1737153122976" duration="1638000" />
+      <workItem from="1737154791303" duration="1276000" />
+      <workItem from="1737186925780" duration="769000" />
+      <workItem from="1737195578941" duration="1023000" />
+      <workItem from="1737250820502" duration="15582000" />
+      <workItem from="1737267619658" duration="1184000" />
+    </task>
+    <task id="LOCAL-00001" summary="Support build on linux-aarch64&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;">
+      <option name="closed" value="true" />
+      <created>1737154600440</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1737154600440</updated>
+    </task>
+    <task id="LOCAL-00002" summary="chore: update gitignore&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;">
+      <option name="closed" value="true" />
+      <created>1737185417521</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1737185417521</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Renovation as Gradle project&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;">
+      <option name="closed" value="true" />
+      <created>1737255332039</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1737255332039</updated>
+    </task>
+    <task id="LOCAL-00004" summary="security: Bump dependency versions&#10;&#10;- ant@1.10.11&#10;- xstream@1.4.21&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;">
+      <option name="closed" value="true" />
+      <created>1737256532399</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1737256532399</updated>
+    </task>
+    <task id="LOCAL-00005" summary="wip: adjust resources&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;">
+      <option name="closed" value="true" />
+      <created>1737259757375</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1737259757375</updated>
+    </task>
+    <task id="LOCAL-00006" summary="refactor: self definition of TitledSeparator&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;">
+      <option name="closed" value="true" />
+      <created>1737259805266</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1737259805266</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Bump jgoodies@1.9.0&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;">
+      <option name="closed" value="true" />
+      <created>1737259831862</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1737259831862</updated>
+    </task>
+    <task id="LOCAL-00008" summary="tweak subprojects&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;">
+      <option name="closed" value="true" />
+      <created>1737259848501</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1737259848501</updated>
+    </task>
+    <task id="LOCAL-00009" summary="tweak subprojects&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;">
+      <option name="closed" value="true" />
+      <created>1737266414397</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1737266414397</updated>
+    </task>
+    <task id="LOCAL-00010" summary="security: Bump dependency versions&#10;&#10;- ant@1.10.11&#10;- xstream@1.4.21&#10;- jgoodies@1.9.0&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;">
+      <option name="closed" value="true" />
+      <created>1737266689027</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1737266689027</updated>
+    </task>
+    <task id="LOCAL-00011" summary="wip: gradle&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;">
+      <option name="closed" value="true" />
+      <created>1737267273431</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1737267273431</updated>
+    </task>
+    <task id="LOCAL-00012" summary="wip: gradle&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;">
+      <option name="closed" value="true" />
+      <created>1737267393486</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1737267393486</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Renovation as Gradle project&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;">
+      <option name="closed" value="true" />
+      <created>1737267449123</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1737267449123</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Add my TitledSeparator.java&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;">
+      <option name="closed" value="true" />
+      <created>1737267512152</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1737267512152</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Add intellij idea files&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;">
+      <option name="closed" value="true" />
+      <created>1737267678230</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1737267678230</updated>
+    </task>
+    <task id="LOCAL-00016" summary="remove build-logic&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;">
+      <option name="closed" value="true" />
+      <created>1737267712873</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1737267712873</updated>
+    </task>
+    <task id="LOCAL-00017" summary="intellij idea file&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;">
+      <option name="closed" value="true" />
+      <created>1737267723308</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1737267723308</updated>
+    </task>
+    <task id="LOCAL-00018" summary="chore: set basic property from gradle.properties&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;">
+      <option name="closed" value="true" />
+      <created>1737268149832</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1737268149832</updated>
+    </task>
+    <task id="LOCAL-00019" summary="chore: update IDE files&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;">
+      <option name="closed" value="true" />
+      <created>1737268164986</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1737268164986</updated>
+    </task>
+    <task id="LOCAL-00020" summary="refactor: remove unnecessary boxing&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;">
+      <option name="closed" value="true" />
+      <created>1737268374088</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1737268374088</updated>
+    </task>
+    <task id="LOCAL-00021" summary="chore: idea files&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;">
+      <option name="closed" value="true" />
+      <created>1737268381776</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1737268381776</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Support build on linux-aarch64&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;" />
+    <MESSAGE value="chore: update gitignore&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;" />
+    <MESSAGE value="wip: adjust resources&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;" />
+    <MESSAGE value="refactor: self definition of TitledSeparator&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;" />
+    <MESSAGE value="Bump jgoodies@1.9.0&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;" />
+    <MESSAGE value="tweak subprojects&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;" />
+    <MESSAGE value="security: Bump dependency versions&#10;&#10;- ant@1.10.11&#10;- xstream@1.4.21&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;" />
+    <MESSAGE value="security: Bump dependency versions&#10;&#10;- ant@1.10.11&#10;- xstream@1.4.21&#10;- jgoodies@1.9.0&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;" />
+    <MESSAGE value="wip: gradle&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;" />
+    <MESSAGE value="Renovation as Gradle project&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;" />
+    <MESSAGE value="Add my TitledSeparator.java&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;" />
+    <MESSAGE value="Add intellij idea files&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;" />
+    <MESSAGE value="remove build-logic&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;" />
+    <MESSAGE value="intellij idea file&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;" />
+    <MESSAGE value="chore: set basic property from gradle.properties&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;" />
+    <MESSAGE value="chore: update IDE files&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;" />
+    <MESSAGE value="refactor: remove unnecessary boxing&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;" />
+    <MESSAGE value="chore: idea files&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: idea files&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;" />
+  </component>
+</project>
