@@ -3,6 +3,10 @@ import java.util.*
 plugins {
     `java-library`
     `maven-publish`
+    signing
+    alias(libs.plugins.spotbugs)
+    alias(libs.plugins.spotless)
+    alias(libs.plugins.nexus.publish)
 }
 
 val workdir = "src/workdir"
@@ -116,5 +120,52 @@ publishing {
                 url.set("https://codeberg.org/miurahr/launch4j")
             }
         }
+    }
+}
+
+val signKey = listOf("signingKey", "signing.keyId", "signing.gnupg.keyName").find { project.hasProperty(it) }
+tasks.withType<Sign> {
+    onlyIf { signKey != null && !rootProject.version.toString().endsWith("-SNAPSHOT") }
+}
+
+signing {
+    when (signKey) {
+        "signingKey" -> {
+            val signingKey: String? by project
+            val signingPassword: String? by project
+            useInMemoryPgpKeys(signingKey, signingPassword)
+        }
+        "signing.keyId" -> { /* do nothing */
+        }
+        "signing.gnupg.keyName" -> {
+            useGpgCmd()
+        }
+    }
+    sign(publishing.publications["maven"])
+}
+val ossrhUsername: String? by project
+val ossrhPassword: String? by project
+
+nexusPublishing.repositories {
+    sonatype {
+        stagingProfileId = "15818299f2c2bb"
+        nexusUrl.set(uri("https://s01.oss.sonatype.org/service/local/"))
+        snapshotRepositoryUrl.set(uri("https://s01.oss.sonatype.org/content/repositories/snapshots/"))
+        if (ossrhUsername != null && ossrhPassword != null) {
+            username.set(ossrhUsername)
+            password.set(ossrhPassword)
+        } else {
+            username.set(System.getenv("SONATYPE_USER"))
+            password.set(System.getenv("SONATYPE_PASSWORD"))
+        }
+    }
+}
+
+spotless {
+    java {
+        palantirJavaFormat()
+        importOrder()
+        removeUnusedImports()
+        formatAnnotations()
     }
 }

@@ -18,5 +18,9 @@ com-jgoodies-jgoodies-common = { module = "com.jgoodies:jgoodies-common", versio
 com-thoughtworks-xstream-xstream = { module = "com.thoughtworks.xstream:xstream", version.ref = "com-thoughtworks-xstream-xstream" }
 commons-beanutils-commons-beanutils = { module = "commons-beanutils:commons-beanutils", version.ref = "commons-beanutils-commons-beanutils" }
 commons-logging-commons-logging = { module = "commons-logging:commons-logging", version.ref = "commons-logging-commons-logging" }
-net-java-abeille-abeille = { module = "net.java.abeille:abeille", version.ref = "net-java-abeille-abeille" }
 org-apache-ant-ant = { module = "org.apache.ant:ant", version.ref = "org-apache-ant-ant" }
+
+[plugins]
+spotbugs = {id = "com.github.spotbugs", version = "5.1.3"}
+spotless = {id = "com.diffplug.spotless", version = "6.22.0"}
+nexus-publish = {id = "io.github.gradle-nexus.publish-plugin", version = "2.0.0"}
