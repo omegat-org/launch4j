@@ -50,7 +50,7 @@ public class StringWrapper {
             return null;
         }
 
-        List<String> strings = new ArrayList<String>(wrappers.size());
+        List<String> strings = new ArrayList<>(wrappers.size());
 
         for (StringWrapper w : wrappers) {
             strings.add(w.toString());

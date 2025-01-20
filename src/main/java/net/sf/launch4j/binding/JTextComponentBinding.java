@@ -55,7 +55,7 @@ public class JTextComponentBinding implements Binding {
         if (property == null || textComponent == null || defaultValue == null) {
             throw new NullPointerException();
         }
-        if (property.equals("")) {
+        if (property.isEmpty()) {
             throw new IllegalArgumentException();
         }
         _property = property;

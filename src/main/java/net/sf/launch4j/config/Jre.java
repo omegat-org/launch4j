@@ -78,12 +78,11 @@ public class Jre implements IValidatable {
                 "jre.maxHeapSize",
                 Messages.getString("Jre.initial.and.max.heap"));
         Validator.checkTrue(
-                initialHeapSize == null || initialHeapSize.intValue() > 0,
+                initialHeapSize == null || initialHeapSize > 0,
                 "jre.initialHeapSize",
                 Messages.getString("Jre.initial.heap"));
         Validator.checkTrue(
-                maxHeapSize == null
-                        || (maxHeapSize.intValue() >= ((initialHeapSize != null) ? initialHeapSize.intValue() : 1)),
+                maxHeapSize == null || (maxHeapSize >= ((initialHeapSize != null) ? initialHeapSize : 1)),
                 "jre.maxHeapSize",
                 Messages.getString("Jre.max.heap"));
         Validator.checkTrue(
@@ -92,7 +91,7 @@ public class Jre implements IValidatable {
                 Messages.getString("Jre.initial.and.max.heap"));
         if (initialHeapPercent != null) {
             Validator.checkRange(
-                    initialHeapPercent.intValue(),
+                    initialHeapPercent,
                     1,
                     100,
                     "jre.initialHeapPercent",
@@ -100,8 +99,8 @@ public class Jre implements IValidatable {
         }
         if (maxHeapPercent != null) {
             Validator.checkRange(
-                    maxHeapPercent.intValue(),
-                    initialHeapPercent != null ? initialHeapPercent.intValue() : 1,
+                    maxHeapPercent,
+                    initialHeapPercent != null ? initialHeapPercent : 1,
                     100,
                     "jre.maxHeapPercent",
                     Messages.getString("Jre.max.heap.percent"));
@@ -214,6 +213,6 @@ public class Jre implements IValidatable {
 
     /** Convert 0 to null */
     private Integer getInteger(Integer i) {
-        return i != null && i.intValue() == 0 ? null : i;
+        return i != null && i == 0 ? null : i;
     }
 }

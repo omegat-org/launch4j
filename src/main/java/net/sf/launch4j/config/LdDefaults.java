@@ -41,8 +41,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class LdDefaults {
-    private static final List<String> GUI_OBJECTS =
-            Arrays.asList(new String[] {"w32api/crt2.o", "head/guihead.o", "head/head.o"});
+    private static final List<String> GUI_OBJECTS = Arrays.asList("w32api/crt2.o", "head/guihead.o", "head/head.o");
 
     private static final List<String> CONSOLE_OBJECTS =
             Arrays.asList(new String[] {"w32api/crt2.o", "head/consolehead.o", "head/head.o"});
@@ -57,20 +56,19 @@ public class LdDefaults {
 
     private static final List<List<String>> HEADER_OBJECTS;
 
-    private static final List<String> LIBS = Arrays.asList(new String[] {
-        "w32api/libmingw32.a",
-        "w32api/libmingwex.a",
-        "w32api/libgcc.a",
-        "w32api/libmsvcrt.a",
-        "w32api/libmoldname.a",
-        "w32api/libkernel32.a",
-        "w32api/libuser32.a",
-        "w32api/libadvapi32.a",
-        "w32api/libshell32.a"
-    });
+    private static final List<String> LIBS = Arrays.asList(
+            "w32api/libmingw32.a",
+            "w32api/libmingwex.a",
+            "w32api/libgcc.a",
+            "w32api/libmsvcrt.a",
+            "w32api/libmoldname.a",
+            "w32api/libkernel32.a",
+            "w32api/libuser32.a",
+            "w32api/libadvapi32.a",
+            "w32api/libshell32.a");
 
     static {
-        HEADER_OBJECTS = new ArrayList<List<String>>();
+        HEADER_OBJECTS = new ArrayList<>();
         HEADER_OBJECTS.add(GUI_OBJECTS);
         HEADER_OBJECTS.add(CONSOLE_OBJECTS);
         HEADER_OBJECTS.add(JNI_GUI_32_OBJECTS);

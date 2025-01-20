@@ -125,7 +125,8 @@ public class Util {
         }
         try {
             Process p = Runtime.getRuntime().exec(cmd);
-            try (BufferedReader is = new BufferedReader(new InputStreamReader(p.getErrorStream(), StandardCharsets.UTF_8))) {
+            try (BufferedReader is =
+                    new BufferedReader(new InputStreamReader(p.getErrorStream(), StandardCharsets.UTF_8))) {
                 String line;
                 int errLine = -1;
                 Pattern pattern = Pattern.compile(":\\d+:");

@@ -30,7 +30,7 @@ public abstract class JreForm extends JPanel {
     protected final JTextField _maxHeapSizeField = new JTextField();
     protected final JTextField _maxHeapPercentField = new JTextField();
     protected final JTextField _initialHeapPercentField = new JTextField();
-    protected final JComboBox<String> _varCombo = new JComboBox<String>();
+    protected final JComboBox<String> _varCombo = new JComboBox<>();
     protected final JButton _propertyButton = new JButton();
     protected final JButton _optionButton = new JButton();
     protected final JButton _envPropertyButton = new JButton();
@@ -60,24 +60,24 @@ public abstract class JreForm extends JPanel {
         CellConstraints cc = new CellConstraints();
         if (cols.length > 0 && rows.length > 0) {
             if (cols[0] == 1 && rows[0] == 1) {
-                /** add a rigid area  */
+                /* add a rigid area  */
                 panel.add(Box.createRigidArea(filler), cc.xy(1, 1));
                 filled_cell_11 = true;
             }
         }
 
-        for (int index = 0; index < cols.length; index++) {
-            if (cols[index] == 1 && filled_cell_11) {
+        for (int col : cols) {
+            if (col == 1 && filled_cell_11) {
                 continue;
             }
-            panel.add(Box.createRigidArea(filler), cc.xy(cols[index], 1));
+            panel.add(Box.createRigidArea(filler), cc.xy(col, 1));
         }
 
-        for (int index = 0; index < rows.length; index++) {
-            if (rows[index] == 1 && filled_cell_11) {
+        for (int row : rows) {
+            if (row == 1 && filled_cell_11) {
                 continue;
             }
-            panel.add(Box.createRigidArea(filler), cc.xy(1, rows[index]));
+            panel.add(Box.createRigidArea(filler), cc.xy(1, row));
         }
     }
 
@@ -92,8 +92,7 @@ public abstract class JreForm extends JPanel {
             ClassLoader classloader = getClass().getClassLoader();
             java.net.URL url = classloader.getResource(imageName);
             if (url != null) {
-                ImageIcon icon = new ImageIcon(url);
-                return icon;
+                return new ImageIcon(url);
             }
         } catch (Exception e) {
             e.printStackTrace();

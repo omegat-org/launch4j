@@ -205,21 +205,21 @@ public class Validator {
     public static void checkFile(File f, String property, String fileDescription) {
         File cfgPath = ConfigPersister.getInstance().getConfigPath();
         if (f == null
-                || f.getPath().equals("")
+                || f.getPath().isEmpty()
                 || (!f.exists() && !Util.getAbsoluteFile(cfgPath, f).exists())) {
             signalViolation(property, Messages.getString("Validator.doesnt.exist", fileDescription));
         }
     }
 
     public static void checkOptFile(File f, String property, String fileDescription) {
-        if (f != null && f.getPath().length() > 0) {
+        if (f != null && !f.getPath().isEmpty()) {
             checkFile(f, property, fileDescription);
         }
     }
 
     public static void checkRelativeWinPath(String path, String property, String msg) {
         if (path == null
-                || path.equals("")
+                || path.isEmpty()
                 || path.startsWith("/")
                 || path.startsWith("\\")
                 || path.indexOf(':') != -1) {

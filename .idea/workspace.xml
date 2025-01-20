@@ -4,8 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1adbc4bb-44f9-4f98-8be1-ed2c5323a80e" name="Changes" comment="Update intellij files&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;">
+    <list default="true" id="1adbc4bb-44f9-4f98-8be1-ed2c5323a80e" name="Changes" comment="security: fix high severity spotbugs errors&#10;&#10;- Remove unwanted unboxing&#10;- Open stderr by InputStreamReader with UTF-8 for Util.exec that is used for windres/ld execution on developer environment&#10;- Open RcBuilder kanji writer's OutputStreamWriter with US_ASCII&#10;- Small fixes&#10;    - use try-resource block instead of explicit close()&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/sf/launch4j/KanjiEscapeOutputStream.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/sf/launch4j/KanjiEscapeOutputStream.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/sf/launch4j/binding/IValidatable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/sf/launch4j/binding/IValidatable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/sf/launch4j/config/JreVersion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/sf/launch4j/config/JreVersion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/sf/launch4j/config/SingleInstance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/sf/launch4j/config/SingleInstance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/sf/launch4j/form/ClassPathForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/sf/launch4j/form/ClassPathForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/sf/launch4j/form/ConfigForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/sf/launch4j/form/ConfigForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/sf/launch4j/form/EnvironmentVarsForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/sf/launch4j/form/EnvironmentVarsForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/sf/launch4j/form/JreForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/sf/launch4j/form/JreForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/sf/launch4j/form/MessagesForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/sf/launch4j/form/MessagesForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/sf/launch4j/form/SingleInstanceForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/sf/launch4j/form/SingleInstanceForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/sf/launch4j/formimpl/GlassPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/sf/launch4j/formimpl/GlassPane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/sf/launch4j/formimpl/SingleInstanceFormImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/sf/launch4j/formimpl/SingleInstanceFormImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,12 +62,6 @@
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="launch4j" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="publishing" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="launch4j" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="verification" type="c8890929:TasksNode$1" />
               </path>
             </expand>
@@ -73,6 +81,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="MIXED" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -95,36 +104,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.launch4j [assemble].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.launch4j [build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.launch4j [check].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.launch4j [coreJar].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.launch4j [jar].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.launch4j [packageAll].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.launch4j [platformJar].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.launch4j [publishToMavenLocal].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.launch4j [publish].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.launch4j [testClasses].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.launch4j:launch4j-workdir [publishToMavenLocal].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/miurahr/IdeaProjects/launch4j/settings.gradle.kts&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.launch4j [assemble].executor": "Run",
+    "Gradle.launch4j [build].executor": "Run",
+    "Gradle.launch4j [check].executor": "Run",
+    "Gradle.launch4j [coreJar].executor": "Run",
+    "Gradle.launch4j [jar].executor": "Run",
+    "Gradle.launch4j [packageAll].executor": "Run",
+    "Gradle.launch4j [platformJar].executor": "Run",
+    "Gradle.launch4j [publishToMavenLocal].executor": "Run",
+    "Gradle.launch4j [publish].executor": "Run",
+    "Gradle.launch4j [spotlessJavaApply].executor": "Run",
+    "Gradle.launch4j [spotlessJava].executor": "Run",
+    "Gradle.launch4j [testClasses].executor": "Run",
+    "Gradle.launch4j:launch4j-workdir [publishToMavenLocal].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/miurahr/IdeaProjects/launch4j/settings.gradle.kts",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -141,7 +152,29 @@
       <recent name="$PROJECT_DIR$/launch4j-workdir/platforms/macosx-x86/bin" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.launch4j [publish]">
+  <component name="RunManager" selected="Gradle.launch4j [check]">
+    <configuration name="launch4j [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="launch4j [check]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -154,50 +187,6 @@
         <option name="taskNames">
           <list>
             <option value="check" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="launch4j [platformJar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="platformJar" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="launch4j [publishToMavenLocal]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="publishToMavenLocal" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -230,7 +219,7 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="launch4j [testClasses]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="launch4j [spotlessJavaApply]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -241,7 +230,29 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="testClasses" />
+            <option value="spotlessJavaApply" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="launch4j [spotlessJava]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="spotlessJava" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -254,11 +265,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.launch4j [publish]" />
-        <item itemvalue="Gradle.launch4j [platformJar]" />
-        <item itemvalue="Gradle.launch4j [testClasses]" />
-        <item itemvalue="Gradle.launch4j [publishToMavenLocal]" />
         <item itemvalue="Gradle.launch4j [check]" />
+        <item itemvalue="Gradle.launch4j [build]" />
+        <item itemvalue="Gradle.launch4j [spotlessJavaApply]" />
+        <item itemvalue="Gradle.launch4j [spotlessJava]" />
+        <item itemvalue="Gradle.launch4j [publish]" />
       </list>
     </recent_temporary>
   </component>
@@ -287,7 +298,7 @@
       <workItem from="1737250820502" duration="15582000" />
       <workItem from="1737267619658" duration="6613000" />
       <workItem from="1737292570680" duration="214000" />
-      <workItem from="1737334264639" duration="90000" />
+      <workItem from="1737334264639" duration="4392000" />
     </task>
     <task id="LOCAL-00001" summary="Support build on linux-aarch64&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;">
       <option name="closed" value="true" />
@@ -529,7 +540,31 @@
       <option name="project" value="LOCAL" />
       <updated>1737292765739</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Update intellij files&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;">
+      <option name="closed" value="true" />
+      <created>1737334388181</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1737334388182</updated>
+    </task>
+    <task id="LOCAL-00032" summary="style: apply spotless&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;">
+      <option name="closed" value="true" />
+      <created>1737334513664</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1737334513664</updated>
+    </task>
+    <task id="LOCAL-00033" summary="security: fix high severity spotbugs errors&#10;&#10;- Remove unwanted unboxing&#10;- Open stderr by InputStreamReader with UTF-8 for Util.exec that is used for windres/ld execution on developer environment&#10;- Open RcBuilder kanji writer's OutputStreamWriter with US_ASCII&#10;- Small fixes&#10;    - use try-resource block instead of explicit close()&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;">
+      <option name="closed" value="true" />
+      <created>1737337114499</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1737337114499</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -559,8 +594,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Support build on linux-aarch64&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;" />
-    <MESSAGE value="chore: update gitignore&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;" />
     <MESSAGE value="wip: adjust resources&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;" />
     <MESSAGE value="refactor: self definition of TitledSeparator&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;" />
     <MESSAGE value="Bump jgoodies@1.9.0&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;" />
@@ -584,6 +617,8 @@
     <MESSAGE value="Version to be &lt;origin&gt;.&lt;forked&gt; now as 3.50.1&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;" />
     <MESSAGE value="Add README and update license&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;" />
     <MESSAGE value="Update intellij files&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update intellij files&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;" />
+    <MESSAGE value="style: apply spotless&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;" />
+    <MESSAGE value="security: fix high severity spotbugs errors&#10;&#10;- Remove unwanted unboxing&#10;- Open stderr by InputStreamReader with UTF-8 for Util.exec that is used for windres/ld execution on developer environment&#10;- Open RcBuilder kanji writer's OutputStreamWriter with US_ASCII&#10;- Small fixes&#10;    - use try-resource block instead of explicit close()&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;" />
+    <option name="LAST_COMMIT_MESSAGE" value="security: fix high severity spotbugs errors&#10;&#10;- Remove unwanted unboxing&#10;- Open stderr by InputStreamReader with UTF-8 for Util.exec that is used for windres/ld execution on developer environment&#10;- Open RcBuilder kanji writer's OutputStreamWriter with US_ASCII&#10;- Small fixes&#10;    - use try-resource block instead of explicit close()&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;" />
   </component>
 </project>

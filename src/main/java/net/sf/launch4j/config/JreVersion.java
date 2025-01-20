@@ -1,5 +1,7 @@
 package net.sf.launch4j.config;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * This class will abstract application from JRE versioning schema and provide
  * comparing capabilities
@@ -15,7 +17,7 @@ public class JreVersion implements Comparable<JreVersion> {
 
     public static JreVersion parseString(String versionStr) {
         JreVersion ret = new JreVersion();
-        if (versionStr == null || versionStr.trim().length() == 0) {
+        if (versionStr == null || versionStr.trim().isEmpty()) {
             return ret;
         }
         if (!versionStr.matches(Jre.VERSION_PATTERN)) {
@@ -24,7 +26,7 @@ public class JreVersion implements Comparable<JreVersion> {
             throw new IllegalArgumentException("JRE version is not in a right format.");
         }
 
-        String[] parts = versionStr.split("[\\._]");
+        String[] parts = versionStr.split("[._]");
         int first = Integer.parseInt(parts[0]);
         if (first > 1) {
             // java 9+ version schema
@@ -94,14 +96,11 @@ public class JreVersion implements Comparable<JreVersion> {
         if (x3 != other.x3) {
             return false;
         }
-        if (x4 != other.x4) {
-            return false;
-        }
-        return true;
+        return x4 == other.x4;
     }
 
     @Override
-    public int compareTo(JreVersion o) {
+    public int compareTo(@NotNull JreVersion o) {
         if (this.equals(o)) {
             return 0;
         }

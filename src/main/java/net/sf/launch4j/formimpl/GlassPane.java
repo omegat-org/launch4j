@@ -15,7 +15,7 @@ import javax.swing.SwingUtilities;
 /**
  * This is the glass pane class that intercepts screen interactions during
  * system busy states.
- *
+ * <p>
  * Based on JavaWorld article by Yexin Chen.
  */
 public class GlassPane extends JComponent implements AWTEventListener {

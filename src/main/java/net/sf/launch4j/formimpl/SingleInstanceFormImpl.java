@@ -31,7 +31,7 @@
 	OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-/**
+/*
  * Created on 2007-09-22
  */
 package net.sf.launch4j.formimpl;

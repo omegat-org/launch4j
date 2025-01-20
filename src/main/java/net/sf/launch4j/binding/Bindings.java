@@ -57,8 +57,8 @@ import org.apache.commons.beanutils.PropertyUtils;
  * @author Copyright (C) 2005 Grzegorz Kowal
  */
 public class Bindings implements PropertyChangeListener, ActionListener {
-    private final Map<String, Binding> _bindings = new HashMap<String, Binding>();
-    private final Map<String, Binding> _optComponents = new HashMap<String, Binding>();
+    private final Map<String, Binding> _bindings = new HashMap<>();
+    private final Map<String, Binding> _optComponents = new HashMap<>();
     private boolean _modified = false;
 
     /**
@@ -165,8 +165,6 @@ public class Bindings implements PropertyChangeListener, ActionListener {
     /**
      * Copies data from UI components to the Java Bean and checks it's class invariants.
      * Clears the _modified flag.
-     * @throws InvariantViolationException
-     * @throws BindingException
      */
     public void get(IValidatable bean) {
         try {

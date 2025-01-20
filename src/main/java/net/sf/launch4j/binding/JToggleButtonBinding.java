@@ -55,7 +55,7 @@ public class JToggleButtonBinding implements Binding {
         if (property == null || button == null) {
             throw new NullPointerException();
         }
-        if (property.equals("")) {
+        if (property.isEmpty()) {
             throw new IllegalArgumentException();
         }
         _property = property;
@@ -75,7 +75,7 @@ public class JToggleButtonBinding implements Binding {
     public void put(IValidatable bean) {
         try {
             Boolean b = (Boolean) PropertyUtils.getProperty(bean, _property);
-            _button.setSelected(b != null && b.booleanValue());
+            _button.setSelected(b != null && b);
         } catch (Exception e) {
             throw new BindingException(e);
         }
@@ -83,7 +83,7 @@ public class JToggleButtonBinding implements Binding {
 
     public void get(IValidatable bean) {
         try {
-            PropertyUtils.setProperty(bean, _property, Boolean.valueOf(_button.isSelected()));
+            PropertyUtils.setProperty(bean, _property, _button.isSelected());
         } catch (Exception e) {
             throw new BindingException(e);
         }

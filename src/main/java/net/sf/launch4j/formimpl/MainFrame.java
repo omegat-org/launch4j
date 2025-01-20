@@ -45,6 +45,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.File;
+import java.net.URL;
+import java.util.Objects;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -144,7 +146,8 @@ public class MainFrame extends JFrame {
     }
 
     private ImageIcon getLocalIcon(String iconPath) {
-        return new ImageIcon(MainFrame.class.getClassLoader().getResource(iconPath));
+        URL url = MainFrame.class.getClassLoader().getResource(iconPath);
+        return new ImageIcon(Objects.requireNonNull(url));
     }
 
     private JButton addButton(Icon icon, String tooltip, ActionListener l) {
@@ -201,10 +204,7 @@ public class MainFrame extends JFrame {
         } catch (InvariantViolationException ex) {
             warn(ex);
             return false;
-        } catch (BindingException ex) {
-            warn(ex.getMessage());
-            return false;
-        } catch (ConfigPersisterException ex) {
+        } catch (BindingException | ConfigPersisterException ex) {
             warn(ex.getMessage());
             return false;
         }
@@ -262,9 +262,7 @@ public class MainFrame extends JFrame {
                     showConfigName(f);
                     setRunEnabled(false);
                 }
-            } catch (ConfigPersisterException ex) {
-                warn(ex.getMessage());
-            } catch (BindingException ex) {
+            } catch (ConfigPersisterException | BindingException ex) {
                 warn(ex.getMessage());
             }
         }
@@ -328,7 +326,6 @@ public class MainFrame extends JFrame {
                 getGlassPane().setVisible(false);
             }
         }
-        ;
     }
 
     private class AboutActionListener implements ActionListener {

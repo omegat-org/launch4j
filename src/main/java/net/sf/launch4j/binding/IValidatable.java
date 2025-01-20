@@ -40,5 +40,5 @@ package net.sf.launch4j.binding;
  * @author Copyright (C) 2004 Grzegorz Kowal
  */
 public interface IValidatable {
-    public void checkInvariants();
+    void checkInvariants();
 }

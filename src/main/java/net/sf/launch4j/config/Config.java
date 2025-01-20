@@ -103,7 +103,7 @@ public class Config implements IValidatable {
                 "outfile",
                 Messages.getString("Config.specify.output.exe"));
         if (dontWrapJar) {
-            if (jar != null && !jar.getPath().equals("")) {
+            if (jar != null && !jar.getPath().isEmpty()) {
                 Validator.checkRelativeWinPath(jar.getPath(), "jar", Messages.getString("Config.application.jar.path"));
             } else {
                 Validator.checkTrue(classPath != null, "classPath", Messages.getString("ClassPath.or.jar"));
@@ -114,7 +114,7 @@ public class Config implements IValidatable {
         if (!Validator.isEmpty(chdir)) {
             Validator.checkRelativeWinPath(chdir, "chdir", Messages.getString("Config.chdir.relative"));
             Validator.checkFalse(
-                    chdir.toLowerCase().equals("true") || chdir.toLowerCase().equals("false"),
+                    chdir.equalsIgnoreCase("true") || chdir.equalsIgnoreCase("false"),
                     "chdir",
                     Messages.getString("Config.chdir.path"));
         }

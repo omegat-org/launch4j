@@ -53,7 +53,7 @@ public class JComboBoxBinding<T> implements Binding {
         if (property == null || combo == null) {
             throw new NullPointerException();
         }
-        if (property.equals("")
+        if (property.isEmpty()
                 || combo.getItemCount() == 0
                 || defaultValue < 0
                 || defaultValue >= combo.getItemCount()) {
@@ -79,7 +79,7 @@ public class JComboBoxBinding<T> implements Binding {
             if (i == null) {
                 throw new BindingException(Messages.getString("JComboBoxBinding.property.null"));
             }
-            select(i.intValue());
+            select(i);
         } catch (Exception e) {
             throw new BindingException(e);
         }
@@ -88,7 +88,6 @@ public class JComboBoxBinding<T> implements Binding {
     public void get(IValidatable bean) {
         try {
             PropertyUtils.setProperty(bean, _property, _combo.getSelectedIndex());
-            return;
         } catch (Exception e) {
             throw new BindingException(e);
         }

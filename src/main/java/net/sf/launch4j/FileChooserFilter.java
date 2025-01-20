@@ -61,8 +61,8 @@ public class FileChooserFilter extends FileFilter {
             return true;
         }
         String ext = Util.getExtension(f);
-        for (int i = 0; i < _extensions.length; i++) {
-            if (ext.toLowerCase().equals(_extensions[i].toLowerCase())) {
+        for (String extension : _extensions) {
+            if (ext.equalsIgnoreCase(extension)) {
                 return true;
             }
         }

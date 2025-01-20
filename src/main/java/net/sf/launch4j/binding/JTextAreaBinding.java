@@ -38,6 +38,7 @@ package net.sf.launch4j.binding;
 
 import java.awt.Color;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import javax.swing.JTextArea;
 import org.apache.commons.beanutils.PropertyUtils;
@@ -54,7 +55,7 @@ public class JTextAreaBinding implements Binding {
         if (property == null || textArea == null) {
             throw new NullPointerException();
         }
-        if (property.equals("")) {
+        if (property.isEmpty()) {
             throw new IllegalArgumentException();
         }
         _property = property;
@@ -73,7 +74,7 @@ public class JTextAreaBinding implements Binding {
     public void put(IValidatable bean) {
         try {
             List<?> list = (List<?>) PropertyUtils.getProperty(bean, _property);
-            StringBuffer sb = new StringBuffer();
+            StringBuilder sb = new StringBuilder();
 
             if (list != null) {
                 for (int i = 0; i < list.size(); i++) {
@@ -94,13 +95,10 @@ public class JTextAreaBinding implements Binding {
         try {
             String text = _textArea.getText();
 
-            if (!text.equals("")) {
+            if (!text.isEmpty()) {
                 String[] items = text.split("\n");
-                List<Object> list = new ArrayList<Object>();
 
-                for (int i = 0; i < items.length; i++) {
-                    list.add(items[i]);
-                }
+                List<Object> list = new ArrayList<>(Arrays.asList(items));
 
                 PropertyUtils.setProperty(bean, _property, list);
             } else {

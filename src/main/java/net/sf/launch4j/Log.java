@@ -91,18 +91,10 @@ class SwingLog extends Log {
     }
 
     public void clear() {
-        SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                _textArea.setText("");
-            }
-        });
+        SwingUtilities.invokeLater(() -> _textArea.setText(""));
     }
 
     public void append(final String line) {
-        SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                _textArea.append(line + "\n");
-            }
-        });
+        SwingUtilities.invokeLater(() -> _textArea.append(line + "\n"));
     }
 }

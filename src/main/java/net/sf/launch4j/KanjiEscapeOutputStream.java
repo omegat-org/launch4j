@@ -37,7 +37,7 @@ import java.io.OutputStream;
 
 /**
  * @author toshimm (2013)
- *
+ * <p>
  *         This class makes Japanese Kanji characters in MS932 charcode escaped
  *         in octal form.
  */
@@ -56,7 +56,7 @@ public class KanjiEscapeOutputStream extends OutputStream {
         b = b & MASK;
 
         if (state) {
-            if (0x00 <= b && b <= 0x7f) {
+            if (b <= 0x7f) {
                 this.parent.write(b);
             } else {
                 this.octprint(b);
@@ -67,7 +67,7 @@ public class KanjiEscapeOutputStream extends OutputStream {
         } else {
             if ((0x40 <= b && b <= 0x7e) || (0x80 <= b && b <= 0xfc)) {
                 this.octprint(b);
-            } else if (0x00 <= b && b <= 0x7f) {
+            } else if (b <= 0x7f) {
                 this.parent.write(b);
             } else {
                 this.octprint(b);

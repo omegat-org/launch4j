@@ -62,7 +62,7 @@ public class OptComponentBinding implements Binding, ActionListener {
             throw new NullPointerException();
         }
 
-        if (property.equals("")) {
+        if (property.isEmpty()) {
             throw new IllegalArgumentException();
         }
 

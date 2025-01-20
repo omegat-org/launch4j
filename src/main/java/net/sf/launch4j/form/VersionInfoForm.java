@@ -37,7 +37,7 @@ public abstract class VersionInfoForm extends JPanel {
     protected final JLabel _companyNameLabel = new JLabel();
     protected final JTextField _companyNameField = new JTextField();
     protected final JLabel _languageLabel = new JLabel();
-    protected final JComboBox<LanguageID> _languageCombo = new JComboBox<LanguageID>();
+    protected final JComboBox<LanguageID> _languageCombo = new JComboBox<>();
     protected final JLabel _trademarksLabel = new JLabel();
     protected final JTextField _trademarksField = new JTextField();
 
@@ -61,24 +61,24 @@ public abstract class VersionInfoForm extends JPanel {
         CellConstraints cc = new CellConstraints();
         if (cols.length > 0 && rows.length > 0) {
             if (cols[0] == 1 && rows[0] == 1) {
-                /** add a rigid area  */
+                /* add a rigid area  */
                 panel.add(Box.createRigidArea(filler), cc.xy(1, 1));
                 filled_cell_11 = true;
             }
         }
 
-        for (int index = 0; index < cols.length; index++) {
-            if (cols[index] == 1 && filled_cell_11) {
+        for (int col : cols) {
+            if (col == 1 && filled_cell_11) {
                 continue;
             }
-            panel.add(Box.createRigidArea(filler), cc.xy(cols[index], 1));
+            panel.add(Box.createRigidArea(filler), cc.xy(col, 1));
         }
 
-        for (int index = 0; index < rows.length; index++) {
-            if (rows[index] == 1 && filled_cell_11) {
+        for (int row : rows) {
+            if (row == 1 && filled_cell_11) {
                 continue;
             }
-            panel.add(Box.createRigidArea(filler), cc.xy(1, rows[index]));
+            panel.add(Box.createRigidArea(filler), cc.xy(1, row));
         }
     }
 
@@ -93,8 +93,7 @@ public abstract class VersionInfoForm extends JPanel {
             ClassLoader classloader = getClass().getClassLoader();
             java.net.URL url = classloader.getResource(imageName);
             if (url != null) {
-                ImageIcon icon = new ImageIcon(url);
-                return icon;
+                return new ImageIcon(url);
             }
         } catch (Exception e) {
             e.printStackTrace();

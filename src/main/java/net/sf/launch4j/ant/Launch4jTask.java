@@ -104,9 +104,7 @@ public class Launch4jTask extends Task {
             }
             final Builder b = new Builder(Log.getAntLog());
             b.build();
-        } catch (ConfigPersisterException e) {
-            throw new BuildException(e);
-        } catch (BuilderException e) {
+        } catch (ConfigPersisterException | BuilderException e) {
             throw new BuildException(e);
         }
     }

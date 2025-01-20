@@ -40,6 +40,7 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import javax.swing.JTextArea;
 import javax.swing.JToggleButton;
@@ -60,7 +61,7 @@ public class OptJTextAreaBinding implements Binding, ActionListener {
         if (property == null || button == null || textArea == null) {
             throw new NullPointerException();
         }
-        if (property.equals("")) {
+        if (property.isEmpty()) {
             throw new IllegalArgumentException();
         }
         _property = property;
@@ -85,7 +86,7 @@ public class OptJTextAreaBinding implements Binding, ActionListener {
             _button.setSelected(selected);
             _textArea.setEnabled(selected);
             List<?> list = (List<?>) PropertyUtils.getProperty(bean, _property);
-            StringBuffer sb = new StringBuffer();
+            StringBuilder sb = new StringBuilder();
 
             if (list != null) {
                 for (int i = 0; i < list.size(); i++) {
@@ -106,14 +107,10 @@ public class OptJTextAreaBinding implements Binding, ActionListener {
         try {
             String text = _textArea.getText();
 
-            if (_button.isSelected() && !text.equals("")) {
+            if (_button.isSelected() && !text.isEmpty()) {
                 String[] items = text.split("\n");
-                List<Object> list = new ArrayList<Object>();
-
-                for (String s : items) {
-                    list.add(s);
-                }
-
+                List<Object> list = new ArrayList<>();
+                Collections.addAll(list, items);
                 PropertyUtils.setProperty(bean, _property, list);
             } else {
                 PropertyUtils.setProperty(bean, _property, null);

@@ -135,7 +135,7 @@ public class Builder {
         } catch (ExecException e) {
             Util.delete(outfile);
             String msg = e.getMessage();
-            if (msg != null && msg.indexOf("windres") != -1) {
+            if (msg != null && msg.contains("windres")) {
                 if (e.getErrLine() != -1) {
                     _log.append(Messages.getString("Builder.line.has.errors", String.valueOf(e.getErrLine())));
                     _log.append(rcb.getLine(e.getErrLine()));
@@ -155,7 +155,7 @@ public class Builder {
 }
 
 class Cmd {
-    private final List<String> _cmd = new ArrayList<String>();
+    private final List<String> _cmd = new ArrayList<>();
     private final File _basedir;
     private final File _bindir;
 

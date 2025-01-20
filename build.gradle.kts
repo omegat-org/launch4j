@@ -31,6 +31,7 @@ dependencies {
     implementation(libs.com.formdev.flatlaf)
     implementation(libs.com.thoughtworks.xstream.xstream)
     implementation(libs.org.apache.ant.ant)
+    implementation(libs.org.jetbrains.annotations)
 }
 
 java {

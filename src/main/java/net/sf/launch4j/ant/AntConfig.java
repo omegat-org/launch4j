@@ -50,9 +50,9 @@ import org.apache.tools.ant.BuildException;
  * @author Copyright (C) 2005 Grzegorz Kowal
  */
 public class AntConfig extends Config {
-    private final List<StringWrapper> wrappedHeaderObjects = new ArrayList<StringWrapper>();
-    private final List<StringWrapper> wrappedLibs = new ArrayList<StringWrapper>();
-    private final List<StringWrapper> wrappedVariables = new ArrayList<StringWrapper>();
+    private final List<StringWrapper> wrappedHeaderObjects = new ArrayList<>();
+    private final List<StringWrapper> wrappedLibs = new ArrayList<>();
+    private final List<StringWrapper> wrappedVariables = new ArrayList<>();
 
     public void setJarPath(String path) {
         setJar(new File(path));

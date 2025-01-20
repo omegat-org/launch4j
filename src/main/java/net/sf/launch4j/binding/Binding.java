@@ -43,20 +43,20 @@ import java.awt.Color;
  */
 public interface Binding {
     /** Used to mark components with invalid data. */
-    public static final Color INVALID_COLOR = Color.PINK;
+    Color INVALID_COLOR = Color.PINK;
 
     /** Java Bean property bound to a component */
-    public String getProperty();
+    String getProperty();
     /** Clear component, set it to the default value */
-    public void clear(IValidatable bean);
+    void clear(IValidatable bean);
     /** Java Bean property -> Component */
-    public void put(IValidatable bean);
+    void put(IValidatable bean);
     /** Component -> Java Bean property */
-    public void get(IValidatable bean);
+    void get(IValidatable bean);
     /** Mark component as valid */
-    public void markValid();
+    void markValid();
     /** Mark component as invalid */
-    public void markInvalid();
+    void markInvalid();
     /** Enable or disable the component */
-    public void setEnabled(boolean enabled);
+    void setEnabled(boolean enabled);
 }

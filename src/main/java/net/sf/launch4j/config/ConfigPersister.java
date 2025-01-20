@@ -41,9 +41,10 @@ import com.thoughtworks.xstream.io.xml.DomDriver;
 import com.thoughtworks.xstream.security.*;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.util.Collection;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -141,7 +142,8 @@ public class ConfigPersister {
 
     public void save(File f) throws ConfigPersisterException {
         try {
-            BufferedWriter w = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(f), "UTF-8"));
+            BufferedWriter w = new BufferedWriter(
+                    new OutputStreamWriter(Files.newOutputStream(f.toPath()), StandardCharsets.UTF_8));
             w.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
             _xstream.toXML(_config, w);
             w.close();

@@ -53,12 +53,12 @@ public class JRadioButtonBinding implements Binding {
         if (property == null || buttons == null) {
             throw new NullPointerException();
         }
-        for (int i = 0; i < buttons.length; i++) {
-            if (buttons[i] == null) {
+        for (JRadioButton button : buttons) {
+            if (button == null) {
                 throw new NullPointerException();
             }
         }
-        if (property.equals("") || buttons.length == 0 || defaultValue < 0 || defaultValue >= buttons.length) {
+        if (property.isEmpty() || buttons.length == 0 || defaultValue < 0 || defaultValue >= buttons.length) {
             throw new IllegalArgumentException();
         }
         _property = property;
@@ -81,7 +81,7 @@ public class JRadioButtonBinding implements Binding {
             if (i == null) {
                 throw new BindingException(Messages.getString("JRadioButtonBinding.property.null"));
             }
-            select(i.intValue());
+            select(i);
         } catch (Exception e) {
             throw new BindingException(e);
         }
@@ -109,10 +109,10 @@ public class JRadioButtonBinding implements Binding {
     }
 
     public void markValid() {
-        for (int i = 0; i < _buttons.length; i++) {
-            if (_buttons[i].isSelected()) {
-                _buttons[i].setBackground(_validColor);
-                _buttons[i].requestFocusInWindow();
+        for (JRadioButton button : _buttons) {
+            if (button.isSelected()) {
+                button.setBackground(_validColor);
+                button.requestFocusInWindow();
                 return;
             }
         }
@@ -120,9 +120,9 @@ public class JRadioButtonBinding implements Binding {
     }
 
     public void markInvalid() {
-        for (int i = 0; i < _buttons.length; i++) {
-            if (_buttons[i].isSelected()) {
-                _buttons[i].setBackground(Binding.INVALID_COLOR);
+        for (JRadioButton button : _buttons) {
+            if (button.isSelected()) {
+                button.setBackground(Binding.INVALID_COLOR);
                 return;
             }
         }
@@ -130,8 +130,8 @@ public class JRadioButtonBinding implements Binding {
     }
 
     public void setEnabled(boolean enabled) {
-        for (int i = 0; i < _buttons.length; i++) {
-            _buttons[i].setEnabled(enabled);
+        for (JRadioButton button : _buttons) {
+            button.setEnabled(enabled);
         }
     }
 }

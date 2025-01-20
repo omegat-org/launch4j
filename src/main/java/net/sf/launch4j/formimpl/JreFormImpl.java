@@ -63,7 +63,7 @@ public class JreFormImpl extends JreForm {
                 .add("jre.maxHeapPercent", _maxHeapPercentField)
                 .add("jre.options", _jvmOptionsTextArea);
 
-        _varCombo.setModel(new DefaultComboBoxModel<String>(new String[] {
+        _varCombo.setModel(new DefaultComboBoxModel<>(new String[] {
             "EXEDIR",
             "EXEFILE",
             "PWD",

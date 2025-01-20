@@ -31,7 +31,7 @@
 	OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-/**
+/*
  * Created on 2007-09-16
  */
 package net.sf.launch4j.config;
@@ -64,6 +64,7 @@ public class SingleInstance implements IValidatable {
         return windowTitle;
     }
 
+    @SuppressWarnings("unused")
     public void setWindowTitle(String appWindowName) {
         this.windowTitle = appWindowName;
     }
@@ -72,6 +73,7 @@ public class SingleInstance implements IValidatable {
         return mutexName;
     }
 
+    @SuppressWarnings("unused")
     public void setMutexName(String mutexName) {
         this.mutexName = mutexName;
     }

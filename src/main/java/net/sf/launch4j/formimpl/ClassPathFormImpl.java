@@ -73,7 +73,7 @@ public class ClassPathFormImpl extends ClassPathForm {
         _classpathCheck.addChangeListener(cpl);
         cpl.stateChanged(null);
 
-        _classpathList.setModel(new DefaultListModel<String>());
+        _classpathList.setModel(new DefaultListModel<>());
         _classpathList.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
         _classpathList.addListSelectionListener(new ClasspathSelectionListener());
 
@@ -135,7 +135,7 @@ public class ClassPathFormImpl extends ClassPathForm {
             if (_classpathList.isSelectionEmpty()) {
                 _classpathField.setText("");
             } else {
-                _classpathField.setText((String) _classpathList.getSelectedValue());
+                _classpathField.setText(_classpathList.getSelectedValue());
             }
             _classpathField.requestFocusInWindow();
         }
@@ -195,15 +195,15 @@ public class ClassPathFormImpl extends ClassPathForm {
                         return;
                     }
                     Attributes attr = jar.getManifest().getMainAttributes();
-                    String mainClass = (String) attr.getValue("Main-Class");
-                    String classPath = (String) attr.getValue("Class-Path");
+                    String mainClass = attr.getValue("Main-Class");
+                    String classPath = attr.getValue("Class-Path");
                     jar.close();
                     _mainclassField.setText(mainClass != null ? mainClass : "");
-                    DefaultListModel<String> model = new DefaultListModel<String>();
+                    DefaultListModel<String> model = new DefaultListModel<>();
                     if (classPath != null) {
                         String[] paths = classPath.split(" ");
-                        for (int i = 0; i < paths.length; i++) {
-                            model.addElement(paths[i]);
+                        for (String path : paths) {
+                            model.addElement(path);
                         }
                     }
                     _classpathList.setModel(model);

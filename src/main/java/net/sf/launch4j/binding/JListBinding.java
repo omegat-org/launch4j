@@ -55,7 +55,7 @@ public class JListBinding<T> implements Binding {
         if (property == null || list == null) {
             throw new NullPointerException();
         }
-        if (property.equals("")) {
+        if (property.isEmpty()) {
             throw new IllegalArgumentException();
         }
         _property = property;
@@ -68,12 +68,12 @@ public class JListBinding<T> implements Binding {
     }
 
     public void clear(IValidatable bean) {
-        _list.setModel(new DefaultListModel<T>());
+        _list.setModel(new DefaultListModel<>());
     }
 
     public void put(IValidatable bean) {
         try {
-            DefaultListModel<T> model = new DefaultListModel<T>();
+            DefaultListModel<T> model = new DefaultListModel<>();
             @SuppressWarnings("unchecked")
             List<T> list = (List<T>) PropertyUtils.getProperty(bean, _property);
 
@@ -93,7 +93,7 @@ public class JListBinding<T> implements Binding {
         try {
             DefaultListModel<T> model = (DefaultListModel<T>) _list.getModel();
             final int size = model.getSize();
-            List<Object> list = new ArrayList<Object>(size);
+            List<Object> list = new ArrayList<>(size);
 
             for (int i = 0; i < size; i++) {
                 list.add(model.get(i));

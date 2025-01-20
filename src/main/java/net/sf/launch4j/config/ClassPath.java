@@ -70,7 +70,7 @@ public class ClassPath implements IValidatable {
     }
 
     public String getPathsString() {
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
 
         if (paths != null) {
             for (int i = 0; i < paths.size(); i++) {
