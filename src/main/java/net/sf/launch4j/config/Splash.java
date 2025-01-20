@@ -7,18 +7,18 @@
 
 	Redistribution and use in source and binary forms, with or without modification,
 	are permitted provided that the following conditions are met:
-	
+
 	1. Redistributions of source code must retain the above copyright notice,
 	   this list of conditions and the following disclaimer.
-	
+
 	2. Redistributions in binary form must reproduce the above copyright notice,
 	   this list of conditions and the following disclaimer in the documentation
 	   and/or other materials provided with the distribution.
-	
+
 	3. Neither the name of the copyright holder nor the names of its contributors
 	   may be used to endorse or promote products derived from this software without
 	   specific prior written permission.
-	
+
 	THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
 	AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
 	THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
@@ -37,7 +37,6 @@
 package net.sf.launch4j.config;
 
 import java.io.File;
-
 import net.sf.launch4j.binding.IValidatable;
 import net.sf.launch4j.binding.Validator;
 
@@ -45,59 +44,57 @@ import net.sf.launch4j.binding.Validator;
  * @author Copyright (C) 2005 Grzegorz Kowal
  */
 public class Splash implements IValidatable {
-	
-	// 1.x config properties_____________________________________________________________
-	public static final String SPLASH_FILE = "splash";
-	public static final String WAIT_FOR_TITLE = "waitForTitle";
-	public static final String TIMEOUT = "splashTimeout";
-	public static final String TIMEOUT_ERR = "splashTimeoutErr";
 
-	// __________________________________________________________________________________
-	private File file;
-	private boolean waitForWindow = true;
-	private int timeout = 60;
-	private boolean timeoutErr = true;
+    // 1.x config properties_____________________________________________________________
+    public static final String SPLASH_FILE = "splash";
+    public static final String WAIT_FOR_TITLE = "waitForTitle";
+    public static final String TIMEOUT = "splashTimeout";
+    public static final String TIMEOUT_ERR = "splashTimeoutErr";
 
-	public void checkInvariants() {
-		Validator.checkFile(file, "splash.file",
-				Messages.getString("Splash.splash.file"));
-		Validator.checkRange(timeout, 1, 60 * 15, "splash.timeout",
-				Messages.getString("Splash.splash.timeout"));
-	}
+    // __________________________________________________________________________________
+    private File file;
+    private boolean waitForWindow = true;
+    private int timeout = 60;
+    private boolean timeoutErr = true;
 
-	/** Splash screen in BMP format. */
-	public File getFile() {
-		return file;
-	}
+    public void checkInvariants() {
+        Validator.checkFile(file, "splash.file", Messages.getString("Splash.splash.file"));
+        Validator.checkRange(timeout, 1, 60 * 15, "splash.timeout", Messages.getString("Splash.splash.timeout"));
+    }
 
-	public void setFile(File file) {
-		this.file = file;
-	}
+    /** Splash screen in BMP format. */
+    public File getFile() {
+        return file;
+    }
 
-	/** Splash timeout in seconds. */
-	public int getTimeout() {
-		return timeout;
-	}
+    public void setFile(File file) {
+        this.file = file;
+    }
 
-	public void setTimeout(int timeout) {
-		this.timeout = timeout;
-	}
+    /** Splash timeout in seconds. */
+    public int getTimeout() {
+        return timeout;
+    }
 
-	/** Signal error on splash timeout. */
-	public boolean isTimeoutErr() {
-		return timeoutErr;
-	}
+    public void setTimeout(int timeout) {
+        this.timeout = timeout;
+    }
 
-	public void setTimeoutErr(boolean timeoutErr) {
-		this.timeoutErr = timeoutErr;
-	}
+    /** Signal error on splash timeout. */
+    public boolean isTimeoutErr() {
+        return timeoutErr;
+    }
 
-	/** Hide splash screen when the child process displayes the first window. */
-	public boolean getWaitForWindow() {
-		return waitForWindow;
-	}
+    public void setTimeoutErr(boolean timeoutErr) {
+        this.timeoutErr = timeoutErr;
+    }
 
-	public void setWaitForWindow(boolean waitForWindow) {
-		this.waitForWindow = waitForWindow;
-	}
+    /** Hide splash screen when the child process displayes the first window. */
+    public boolean getWaitForWindow() {
+        return waitForWindow;
+    }
+
+    public void setWaitForWindow(boolean waitForWindow) {
+        this.waitForWindow = waitForWindow;
+    }
 }

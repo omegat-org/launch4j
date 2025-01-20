@@ -7,18 +7,18 @@
 
 	Redistribution and use in source and binary forms, with or without modification,
 	are permitted provided that the following conditions are met:
-	
+
 	1. Redistributions of source code must retain the above copyright notice,
 	   this list of conditions and the following disclaimer.
-	
+
 	2. Redistributions in binary form must reproduce the above copyright notice,
 	   this list of conditions and the following disclaimer in the documentation
 	   and/or other materials provided with the distribution.
-	
+
 	3. Neither the name of the copyright holder nor the names of its contributors
 	   may be used to endorse or promote products derived from this software without
 	   specific prior written permission.
-	
+
 	THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
 	AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
 	THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
@@ -39,93 +39,88 @@ package net.sf.launch4j.ant;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-
-import org.apache.tools.ant.BuildException;
-
 import net.sf.launch4j.config.Config;
 import net.sf.launch4j.config.Msg;
 import net.sf.launch4j.config.SingleInstance;
 import net.sf.launch4j.config.Splash;
 import net.sf.launch4j.config.VersionInfo;
+import org.apache.tools.ant.BuildException;
 
 /**
  * @author Copyright (C) 2005 Grzegorz Kowal
  */
 public class AntConfig extends Config {
-	private final List<StringWrapper> wrappedHeaderObjects = new ArrayList<StringWrapper>();
-	private final List<StringWrapper> wrappedLibs = new ArrayList<StringWrapper>();
-	private final List<StringWrapper> wrappedVariables = new ArrayList<StringWrapper>();
+    private final List<StringWrapper> wrappedHeaderObjects = new ArrayList<StringWrapper>();
+    private final List<StringWrapper> wrappedLibs = new ArrayList<StringWrapper>();
+    private final List<StringWrapper> wrappedVariables = new ArrayList<StringWrapper>();
 
-	public void setJarPath(String path) {
-		setJar(new File(path));
-	}
+    public void setJarPath(String path) {
+        setJar(new File(path));
+    }
 
-	public void addObj(StringWrapper obj) {
-		wrappedHeaderObjects.add(obj);
-	}
+    public void addObj(StringWrapper obj) {
+        wrappedHeaderObjects.add(obj);
+    }
 
-	public void addLib(StringWrapper lib) {
-		wrappedLibs.add(lib);
-	}
-	
-	public void addVar(StringWrapper var) {
-		wrappedVariables.add(var);
-	}
+    public void addLib(StringWrapper lib) {
+        wrappedLibs.add(lib);
+    }
 
-	// __________________________________________________________________________________
+    public void addVar(StringWrapper var) {
+        wrappedVariables.add(var);
+    }
 
-	public void addSingleInstance(SingleInstance singleInstance) {
-		checkNull(getSingleInstance(), "singleInstance");
-		setSingleInstance(singleInstance);
-	}
+    // __________________________________________________________________________________
 
-	public void addClassPath(AntClassPath classPath) {
-		checkNull(getClassPath(), "classPath");
-		setClassPath(classPath);
-	}
+    public void addSingleInstance(SingleInstance singleInstance) {
+        checkNull(getSingleInstance(), "singleInstance");
+        setSingleInstance(singleInstance);
+    }
 
-	public void addJre(AntJre jre) {
-		checkNull(getJre(), "jre");
-		setJre(jre);
-	}
+    public void addClassPath(AntClassPath classPath) {
+        checkNull(getClassPath(), "classPath");
+        setClassPath(classPath);
+    }
 
-	public void addSplash(Splash splash) {
-		checkNull(getSplash(), "splash");
-		setSplash(splash);
-	}
+    public void addJre(AntJre jre) {
+        checkNull(getJre(), "jre");
+        setJre(jre);
+    }
 
-	public void addVersionInfo(VersionInfo versionInfo) {
-		checkNull(getVersionInfo(), "versionInfo");
-		setVersionInfo(versionInfo);
-	}
-	
-	public void addMessages(Msg messages) {
-		checkNull(getMessages(), "messages");
-		setMessages(messages);
-	}
+    public void addSplash(Splash splash) {
+        checkNull(getSplash(), "splash");
+        setSplash(splash);
+    }
 
-	// __________________________________________________________________________________
+    public void addVersionInfo(VersionInfo versionInfo) {
+        checkNull(getVersionInfo(), "versionInfo");
+        setVersionInfo(versionInfo);
+    }
 
-	public void unwrap() {
-		setHeaderObjects(StringWrapper.unwrap(wrappedHeaderObjects));
-		setLibs(StringWrapper.unwrap(wrappedLibs));
-		setVariables(StringWrapper.unwrap(wrappedVariables));
+    public void addMessages(Msg messages) {
+        checkNull(getMessages(), "messages");
+        setMessages(messages);
+    }
 
-		if (getClassPath() != null) {
-			((AntClassPath) getClassPath()).unwrap();
-		}
+    // __________________________________________________________________________________
 
-		if (getJre() != null) {
-			((AntJre) getJre()).unwrap();
-		}
-	}
+    public void unwrap() {
+        setHeaderObjects(StringWrapper.unwrap(wrappedHeaderObjects));
+        setLibs(StringWrapper.unwrap(wrappedLibs));
+        setVariables(StringWrapper.unwrap(wrappedVariables));
 
-	private void checkNull(Object o, String name) {
-		if (o != null) {
-			throw new BuildException(
-					Messages.getString("AntConfig.duplicate.element")
-					+ ": "
-					+ name);
-		}
-	}
+        if (getClassPath() != null) {
+            ((AntClassPath) getClassPath()).unwrap();
+        }
+
+        if (getJre() != null) {
+            ((AntJre) getJre()).unwrap();
+        }
+    }
+
+    private void checkNull(Object o, String name) {
+        if (o != null) {
+            throw new BuildException(Messages.getString("AntConfig.duplicate.element") + ": " + name);
+        }
+    }
 }

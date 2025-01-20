@@ -7,18 +7,18 @@
 
 	Redistribution and use in source and binary forms, with or without modification,
 	are permitted provided that the following conditions are met:
-	
+
 	1. Redistributions of source code must retain the above copyright notice,
 	   this list of conditions and the following disclaimer.
-	
+
 	2. Redistributions in binary form must reproduce the above copyright notice,
 	   this list of conditions and the following disclaimer in the documentation
 	   and/or other materials provided with the distribution.
-	
+
 	3. Neither the name of the copyright holder nor the names of its contributors
 	   may be used to endorse or promote products derived from this software without
 	   specific prior written permission.
-	
+
 	THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
 	AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
 	THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
@@ -38,29 +38,27 @@ package net.sf.launch4j.formimpl;
 
 import java.io.File;
 import java.util.prefs.Preferences;
-
 import javax.swing.JFileChooser;
 
 /**
  * @author Copyright (C) 2006 Grzegorz Kowal
  */
 public class FileChooser extends JFileChooser {
-	private final Preferences _prefs;
-	private final String _key;
+    private final Preferences _prefs;
+    private final String _key;
 
-	public FileChooser(Class<?> clazz) {
-		_prefs = Preferences.userNodeForPackage(clazz);
-		_key = "currentDir-"
-			+ clazz.getName().substring(clazz.getName().lastIndexOf('.') + 1);
-		String path = _prefs.get(_key, null);
+    public FileChooser(Class<?> clazz) {
+        _prefs = Preferences.userNodeForPackage(clazz);
+        _key = "currentDir-" + clazz.getName().substring(clazz.getName().lastIndexOf('.') + 1);
+        String path = _prefs.get(_key, null);
 
-		if (path != null) {
-			setCurrentDirectory(new File(path));
-		}
-	}
+        if (path != null) {
+            setCurrentDirectory(new File(path));
+        }
+    }
 
-	public void approveSelection() {
-		_prefs.put(_key, getCurrentDirectory().getPath());
-		super.approveSelection();
-	}
+    public void approveSelection() {
+        _prefs.put(_key, getCurrentDirectory().getPath());
+        super.approveSelection();
+    }
 }

@@ -7,18 +7,18 @@
 
 	Redistribution and use in source and binary forms, with or without modification,
 	are permitted provided that the following conditions are met:
-	
+
 	1. Redistributions of source code must retain the above copyright notice,
 	   this list of conditions and the following disclaimer.
-	
+
 	2. Redistributions in binary form must reproduce the above copyright notice,
 	   this list of conditions and the following disclaimer in the documentation
 	   and/or other materials provided with the distribution.
-	
+
 	3. Neither the name of the copyright holder nor the names of its contributors
 	   may be used to endorse or promote products derived from this software without
 	   specific prior written permission.
-	
+
 	THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
 	AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
 	THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
@@ -38,38 +38,36 @@ package net.sf.launch4j.formimpl;
 
 import java.awt.Color;
 import java.awt.event.ActionListener;
-
 import javax.swing.JTextField;
-
 import net.sf.launch4j.binding.Binding;
 
 /**
  * @author Copyright (C) 2006 Grzegorz Kowal
  */
 public abstract class AbstractAcceptListener implements ActionListener {
-	final JTextField _field;
+    final JTextField _field;
 
-	public AbstractAcceptListener(JTextField f, boolean listen) {
-		_field = f;
-		if (listen) {
-			_field.addActionListener(this);
-		}
-	}
+    public AbstractAcceptListener(JTextField f, boolean listen) {
+        _field = f;
+        if (listen) {
+            _field.addActionListener(this);
+        }
+    }
 
-	protected String getText() {
-		return _field.getText();
-	}
-	
-	protected void clear() {
-		_field.setText("");
-		_field.requestFocusInWindow();
-	}
+    protected String getText() {
+        return _field.getText();
+    }
 
-	protected void signalViolation(String msg) {
-		final Color bg = _field.getBackground();
-		_field.setBackground(Binding.INVALID_COLOR);
-		MainFrame.getInstance().warn(msg);
-		_field.setBackground(bg);
-		_field.requestFocusInWindow();
-	}
+    protected void clear() {
+        _field.setText("");
+        _field.requestFocusInWindow();
+    }
+
+    protected void signalViolation(String msg) {
+        final Color bg = _field.getBackground();
+        _field.setBackground(Binding.INVALID_COLOR);
+        MainFrame.getInstance().warn(msg);
+        _field.setBackground(bg);
+        _field.requestFocusInWindow();
+    }
 }

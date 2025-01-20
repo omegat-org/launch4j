@@ -7,18 +7,18 @@
 
 	Redistribution and use in source and binary forms, with or without modification,
 	are permitted provided that the following conditions are met:
-	
+
 	1. Redistributions of source code must retain the above copyright notice,
 	   this list of conditions and the following disclaimer.
-	
+
 	2. Redistributions in binary form must reproduce the above copyright notice,
 	   this list of conditions and the following disclaimer in the documentation
 	   and/or other materials provided with the distribution.
-	
+
 	3. Neither the name of the copyright holder nor the names of its contributors
 	   may be used to endorse or promote products derived from this software without
 	   specific prior written permission.
-	
+
 	THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
 	AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
 	THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
@@ -45,14 +45,16 @@ import net.sf.launch4j.form.MessagesForm;
  */
 public class MessagesFormImpl extends MessagesForm {
 
-	public MessagesFormImpl(Bindings bindings) {
-		Msg m = new Msg();
-		bindings.addOptComponent("messages", Msg.class, _messagesCheck)
-				.add("messages.startupErr", _startupErrTextArea, 	m.getStartupErr())
-				.add("messages.jreNotFoundErr", _jreNotFoundErrTextArea, m.getJreNotFoundErr())
-				.add("messages.jreVersionErr", _jreVersionErrTextArea, m.getJreVersionErr())
-				.add("messages.launcherErr", _launcherErrTextArea, m.getLauncherErr())
-				.add("messages.instanceAlreadyExistsMsg", _instanceAlreadyExistsMsgTextArea,
-						m.getInstanceAlreadyExistsMsg());
-	}
+    public MessagesFormImpl(Bindings bindings) {
+        Msg m = new Msg();
+        bindings.addOptComponent("messages", Msg.class, _messagesCheck)
+                .add("messages.startupErr", _startupErrTextArea, m.getStartupErr())
+                .add("messages.jreNotFoundErr", _jreNotFoundErrTextArea, m.getJreNotFoundErr())
+                .add("messages.jreVersionErr", _jreVersionErrTextArea, m.getJreVersionErr())
+                .add("messages.launcherErr", _launcherErrTextArea, m.getLauncherErr())
+                .add(
+                        "messages.instanceAlreadyExistsMsg",
+                        _instanceAlreadyExistsMsgTextArea,
+                        m.getInstanceAlreadyExistsMsg());
+    }
 }

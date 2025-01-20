@@ -1,7 +1,7 @@
 package net.sf.launch4j.formimpl;
 
-import javax.swing.*;
 import java.awt.*;
+import javax.swing.*;
 
 public class TitledSeparator extends JLabel {
 

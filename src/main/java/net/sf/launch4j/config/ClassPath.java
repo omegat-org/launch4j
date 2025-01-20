@@ -7,18 +7,18 @@
 
 	Redistribution and use in source and binary forms, with or without modification,
 	are permitted provided that the following conditions are met:
-	
+
 	1. Redistributions of source code must retain the above copyright notice,
 	   this list of conditions and the following disclaimer.
-	
+
 	2. Redistributions in binary form must reproduce the above copyright notice,
 	   this list of conditions and the following disclaimer in the documentation
 	   and/or other materials provided with the distribution.
-	
+
 	3. Neither the name of the copyright holder nor the names of its contributors
 	   may be used to endorse or promote products derived from this software without
 	   specific prior written permission.
-	
+
 	THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
 	AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
 	THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
@@ -37,7 +37,6 @@
 package net.sf.launch4j.config;
 
 import java.util.List;
-
 import net.sf.launch4j.binding.IValidatable;
 import net.sf.launch4j.binding.Validator;
 
@@ -45,48 +44,44 @@ import net.sf.launch4j.binding.Validator;
  * @author Copyright (C) 2006 Grzegorz Kowal
  */
 public class ClassPath implements IValidatable {
-	private String mainClass;
-	private List<String> paths;
+    private String mainClass;
+    private List<String> paths;
 
-	public void checkInvariants() {
-		Validator.checkString(mainClass, Validator.MAX_PATH, "mainClass",
-				Messages.getString("ClassPath.mainClass"));
-		Validator.checkOptStrings(paths,
-				Validator.MAX_PATH,
-				Validator.MAX_ARGS,
-				"paths",
-				Messages.getString("ClassPath.path"));
-	}
+    public void checkInvariants() {
+        Validator.checkString(mainClass, Validator.MAX_PATH, "mainClass", Messages.getString("ClassPath.mainClass"));
+        Validator.checkOptStrings(
+                paths, Validator.MAX_PATH, Validator.MAX_ARGS, "paths", Messages.getString("ClassPath.path"));
+    }
 
-	public String getMainClass() {
-		return mainClass;
-	}
+    public String getMainClass() {
+        return mainClass;
+    }
 
-	public void setMainClass(String mainClass) {
-		this.mainClass = mainClass;
-	}
+    public void setMainClass(String mainClass) {
+        this.mainClass = mainClass;
+    }
 
-	public List<String> getPaths() {
-		return paths;
-	}
+    public List<String> getPaths() {
+        return paths;
+    }
 
-	public void setPaths(List<String> paths) {
-		this.paths = paths;
-	}
+    public void setPaths(List<String> paths) {
+        this.paths = paths;
+    }
 
-	public String getPathsString() {
-		StringBuffer sb = new StringBuffer();
+    public String getPathsString() {
+        StringBuffer sb = new StringBuffer();
 
-		if (paths != null) {
-			for (int i = 0; i < paths.size(); i++) {
-				sb.append(paths.get(i));
-	
-				if (i < paths.size() - 1) {
-					sb.append(';');
-				}
-			}
-		}
+        if (paths != null) {
+            for (int i = 0; i < paths.size(); i++) {
+                sb.append(paths.get(i));
 
-		return sb.toString();
-	}
+                if (i < paths.size() - 1) {
+                    sb.append(';');
+                }
+            }
+        }
+
+        return sb.toString();
+    }
 }

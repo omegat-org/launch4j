@@ -7,18 +7,18 @@
 
 	Redistribution and use in source and binary forms, with or without modification,
 	are permitted provided that the following conditions are met:
-	
+
 	1. Redistributions of source code must retain the above copyright notice,
 	   this list of conditions and the following disclaimer.
-	
+
 	2. Redistributions in binary form must reproduce the above copyright notice,
 	   this list of conditions and the following disclaimer in the documentation
 	   and/or other materials provided with the distribution.
-	
+
 	3. Neither the name of the copyright holder nor the names of its contributors
 	   may be used to endorse or promote products derived from this software without
 	   specific prior written permission.
-	
+
 	THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
 	AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
 	THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
@@ -43,68 +43,70 @@ import net.sf.launch4j.binding.Validator;
  * @author Copyright (C) 2006 Grzegorz Kowal
  */
 public class Msg implements IValidatable {
-	private String startupErr;
-	private String jreNotFoundErr;
-	private String jreVersionErr;
-	private String launcherErr;
-	private String instanceAlreadyExistsMsg;
+    private String startupErr;
+    private String jreNotFoundErr;
+    private String jreVersionErr;
+    private String launcherErr;
+    private String instanceAlreadyExistsMsg;
 
-	public void checkInvariants() {
-		Validator.checkOptString(startupErr, 1024, "startupErr",
-				Messages.getString("Msg.startupErr"));
-		Validator.checkOptString(jreNotFoundErr, 1024, "jreNotFoundErr",
-				Messages.getString("Msg.jreNotFoundErr"));
-		Validator.checkOptString(jreVersionErr, 1024, "jreVersionErr",
-				Messages.getString("Msg.jreVersionErr"));
-		Validator.checkOptString(launcherErr, 1024, "launcherErr",
-				Messages.getString("Msg.launcherErr"));
-		Validator.checkOptString(instanceAlreadyExistsMsg, 1024, "instanceAlreadyExistsMsg",
-				Messages.getString("Msg.instanceAlreadyExistsMsg"));
-	}
-
-	public String getStartupErr() {
-		return !Validator.isEmpty(startupErr) ? startupErr
-				: "An error occurred while starting the application.";
-	}
-	
-	public void setStartupErr(String startupErr) {
-		this.startupErr = startupErr;
-	}
-
-	public String getJreNotFoundErr() {
-		return !Validator.isEmpty(jreNotFoundErr) ? jreNotFoundErr
-				: "This application requires a Java Runtime Environment.";
-	}
-
-	public void setJreNotFoundErr(String jreNotFoundErr) {
-		this.jreNotFoundErr = jreNotFoundErr;
-	}
-
-	public String getJreVersionErr() {
-		return !Validator.isEmpty(jreVersionErr) ? jreVersionErr
-				: "This application requires a Java Runtime Environment";
-	}
-
-	public void setJreVersionErr(String jreVersionErr) {
-		this.jreVersionErr = jreVersionErr;
-	}
-	
-	public String getLauncherErr() {
-		return !Validator.isEmpty(launcherErr) ? launcherErr
-				: "The registry refers to a nonexistent Java Runtime Environment" +
-						" installation or the runtime is corrupted.";
-	}
-	
-	public void setLauncherErr(String launcherErr) {
-		this.launcherErr = launcherErr;
-	}
-
-	public String getInstanceAlreadyExistsMsg() {
-    	return !Validator.isEmpty(instanceAlreadyExistsMsg) ? instanceAlreadyExistsMsg
-    			: "An application instance is already running.";
+    public void checkInvariants() {
+        Validator.checkOptString(startupErr, 1024, "startupErr", Messages.getString("Msg.startupErr"));
+        Validator.checkOptString(jreNotFoundErr, 1024, "jreNotFoundErr", Messages.getString("Msg.jreNotFoundErr"));
+        Validator.checkOptString(jreVersionErr, 1024, "jreVersionErr", Messages.getString("Msg.jreVersionErr"));
+        Validator.checkOptString(launcherErr, 1024, "launcherErr", Messages.getString("Msg.launcherErr"));
+        Validator.checkOptString(
+                instanceAlreadyExistsMsg,
+                1024,
+                "instanceAlreadyExistsMsg",
+                Messages.getString("Msg.instanceAlreadyExistsMsg"));
     }
 
-	public void setInstanceAlreadyExistsMsg(String instanceAlreadyExistsMsg) {
-    	this.instanceAlreadyExistsMsg = instanceAlreadyExistsMsg;
+    public String getStartupErr() {
+        return !Validator.isEmpty(startupErr) ? startupErr : "An error occurred while starting the application.";
+    }
+
+    public void setStartupErr(String startupErr) {
+        this.startupErr = startupErr;
+    }
+
+    public String getJreNotFoundErr() {
+        return !Validator.isEmpty(jreNotFoundErr)
+                ? jreNotFoundErr
+                : "This application requires a Java Runtime Environment.";
+    }
+
+    public void setJreNotFoundErr(String jreNotFoundErr) {
+        this.jreNotFoundErr = jreNotFoundErr;
+    }
+
+    public String getJreVersionErr() {
+        return !Validator.isEmpty(jreVersionErr)
+                ? jreVersionErr
+                : "This application requires a Java Runtime Environment";
+    }
+
+    public void setJreVersionErr(String jreVersionErr) {
+        this.jreVersionErr = jreVersionErr;
+    }
+
+    public String getLauncherErr() {
+        return !Validator.isEmpty(launcherErr)
+                ? launcherErr
+                : "The registry refers to a nonexistent Java Runtime Environment"
+                        + " installation or the runtime is corrupted.";
+    }
+
+    public void setLauncherErr(String launcherErr) {
+        this.launcherErr = launcherErr;
+    }
+
+    public String getInstanceAlreadyExistsMsg() {
+        return !Validator.isEmpty(instanceAlreadyExistsMsg)
+                ? instanceAlreadyExistsMsg
+                : "An application instance is already running.";
+    }
+
+    public void setInstanceAlreadyExistsMsg(String instanceAlreadyExistsMsg) {
+        this.instanceAlreadyExistsMsg = instanceAlreadyExistsMsg;
     }
 }

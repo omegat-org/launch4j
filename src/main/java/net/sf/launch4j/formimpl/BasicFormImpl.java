@@ -7,18 +7,18 @@
 
 	Redistribution and use in source and binary forms, with or without modification,
 	are permitted provided that the following conditions are met:
-	
+
 	1. Redistributions of source code must retain the above copyright notice,
 	   this list of conditions and the following disclaimer.
-	
+
 	2. Redistributions in binary form must reproduce the above copyright notice,
 	   this list of conditions and the following disclaimer in the documentation
 	   and/or other materials provided with the distribution.
-	
+
 	3. Neither the name of the copyright holder nor the names of its contributors
 	   may be used to endorse or promote products derived from this software without
 	   specific prior written permission.
-	
+
 	THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
 	AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
 	THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
@@ -40,7 +40,6 @@ import javax.swing.JFileChooser;
 import javax.swing.JRadioButton;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
-
 import net.sf.launch4j.FileChooserFilter;
 import net.sf.launch4j.binding.Bindings;
 import net.sf.launch4j.form.BasicForm;
@@ -50,52 +49,48 @@ import net.sf.launch4j.form.BasicForm;
  */
 public class BasicFormImpl extends BasicForm {
 
-	public BasicFormImpl(Bindings bindings, JFileChooser fc) {
-		bindings.add("outfile", _outfileField)
-				.add("dontWrapJar", _dontWrapJarCheck)
-				.add("jar", _jarField)
-				.add("manifest", _manifestField)
-				.add("icon", _iconField)
-				.add("cmdLine", _cmdLineField)
-				.add("iniFile", _iniFileField)
-				.add("errTitle", _errorTitleField)
-				.add("downloadUrl", _downloadUrlField)
-				.add("supportUrl", _supportUrlField)
-				.add("chdir", _chdirField, ".")
-				.add("priorityIndex", new JRadioButton[] { _normalPriorityRadio,
-															_idlePriorityRadio,
-															_highPriorityRadio })
-				.add("stayAlive", _stayAliveCheck)
-				.add("restartOnCrash", _restartOnCrashCheck);
+    public BasicFormImpl(Bindings bindings, JFileChooser fc) {
+        bindings.add("outfile", _outfileField)
+                .add("dontWrapJar", _dontWrapJarCheck)
+                .add("jar", _jarField)
+                .add("manifest", _manifestField)
+                .add("icon", _iconField)
+                .add("cmdLine", _cmdLineField)
+                .add("iniFile", _iniFileField)
+                .add("errTitle", _errorTitleField)
+                .add("downloadUrl", _downloadUrlField)
+                .add("supportUrl", _supportUrlField)
+                .add("chdir", _chdirField, ".")
+                .add("priorityIndex", new JRadioButton[] {_normalPriorityRadio, _idlePriorityRadio, _highPriorityRadio})
+                .add("stayAlive", _stayAliveCheck)
+                .add("restartOnCrash", _restartOnCrashCheck);
 
-		_dontWrapJarCheck.addChangeListener(new DontWrapJarChangeListener());
+        _dontWrapJarCheck.addChangeListener(new DontWrapJarChangeListener());
 
-		_outfileButton.addActionListener(new BrowseActionListener(true, fc,
-				new FileChooserFilter("Windows executables (.exe)", ".exe"),
-				_outfileField));
-		_jarButton.addActionListener(new BrowseActionListener(false, fc,
-				new FileChooserFilter("Jar files", ".jar"), _jarField));
-		_manifestButton.addActionListener(new BrowseActionListener(false, fc,
-				new FileChooserFilter("Manifest files (.manifest)", ".manifest"),
-				_manifestField));
-		_iconButton.addActionListener(new BrowseActionListener(false, fc,
-				new FileChooserFilter("Icon files (.ico)", ".ico"), _iconField));
-	}
+        _outfileButton.addActionListener(new BrowseActionListener(
+                true, fc, new FileChooserFilter("Windows executables (.exe)", ".exe"), _outfileField));
+        _jarButton.addActionListener(
+                new BrowseActionListener(false, fc, new FileChooserFilter("Jar files", ".jar"), _jarField));
+        _manifestButton.addActionListener(new BrowseActionListener(
+                false, fc, new FileChooserFilter("Manifest files (.manifest)", ".manifest"), _manifestField));
+        _iconButton.addActionListener(
+                new BrowseActionListener(false, fc, new FileChooserFilter("Icon files (.ico)", ".ico"), _iconField));
+    }
 
-	private class DontWrapJarChangeListener implements ChangeListener {
+    private class DontWrapJarChangeListener implements ChangeListener {
 
-		public void stateChanged(ChangeEvent e) {
-			boolean dontWrap = _dontWrapJarCheck.isSelected();
-			if (dontWrap)  {
-				_jarLabel.setIcon(loadImage("images/asterix-o.gif"));
-			    _jarLabel.setText(Messages.getString("jarPath"));
-			    _jarField.setToolTipText(Messages.getString("jarPathTip"));
-			} else {
-				_jarLabel.setIcon(loadImage("images/asterix.gif"));
-				_jarLabel.setText(Messages.getString("jar"));
-				_jarField.setToolTipText(Messages.getString("jarTip"));
-			}
-			_jarButton.setEnabled(!dontWrap);
-		}
-	}
+        public void stateChanged(ChangeEvent e) {
+            boolean dontWrap = _dontWrapJarCheck.isSelected();
+            if (dontWrap) {
+                _jarLabel.setIcon(loadImage("images/asterix-o.gif"));
+                _jarLabel.setText(Messages.getString("jarPath"));
+                _jarField.setToolTipText(Messages.getString("jarPathTip"));
+            } else {
+                _jarLabel.setIcon(loadImage("images/asterix.gif"));
+                _jarLabel.setText(Messages.getString("jar"));
+                _jarField.setToolTipText(Messages.getString("jarTip"));
+            }
+            _jarButton.setEnabled(!dontWrap);
+        }
+    }
 }

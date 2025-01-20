@@ -7,18 +7,18 @@
 
 	Redistribution and use in source and binary forms, with or without modification,
 	are permitted provided that the following conditions are met:
-	
+
 	1. Redistributions of source code must retain the above copyright notice,
 	   this list of conditions and the following disclaimer.
-	
+
 	2. Redistributions in binary form must reproduce the above copyright notice,
 	   this list of conditions and the following disclaimer in the documentation
 	   and/or other materials provided with the distribution.
-	
+
 	3. Neither the name of the copyright holder nor the names of its contributors
 	   may be used to endorse or promote products derived from this software without
 	   specific prior written permission.
-	
+
 	THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
 	AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
 	THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
@@ -42,7 +42,6 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.HashMap;
 import java.util.Map;
-
 import javax.swing.JComboBox;
 import javax.swing.JComponent;
 import javax.swing.JList;
@@ -50,284 +49,281 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
 import javax.swing.JToggleButton;
 import javax.swing.text.JTextComponent;
-
 import org.apache.commons.beanutils.PropertyUtils;
 
 /**
  * Creates and handles bindings.
- * 
+ *
  * @author Copyright (C) 2005 Grzegorz Kowal
  */
 public class Bindings implements PropertyChangeListener, ActionListener {
-	private final Map<String, Binding> _bindings = new HashMap<String, Binding>();
-	private final Map<String, Binding> _optComponents = new HashMap<String, Binding>();
-	private boolean _modified = false;
+    private final Map<String, Binding> _bindings = new HashMap<String, Binding>();
+    private final Map<String, Binding> _optComponents = new HashMap<String, Binding>();
+    private boolean _modified = false;
 
-	/**
-	 * Used to track component modifications.
-	 */
-	@Override
-	public void propertyChange(PropertyChangeEvent evt) {
-		String prop = evt.getPropertyName();
-		if ("AccessibleValue".equals(prop)
-				|| "AccessibleText".equals(prop)
-				|| ("AccessibleVisibleData".equals(prop)
-						&& evt.getSource().getClass().getName().contains("JList"))) {
-			_modified = true;
-		}
-	}
-	
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		_modified = true;
-	}
+    /**
+     * Used to track component modifications.
+     */
+    @Override
+    public void propertyChange(PropertyChangeEvent evt) {
+        String prop = evt.getPropertyName();
+        if ("AccessibleValue".equals(prop)
+                || "AccessibleText".equals(prop)
+                || ("AccessibleVisibleData".equals(prop)
+                        && evt.getSource().getClass().getName().contains("JList"))) {
+            _modified = true;
+        }
+    }
 
-	/** 
-	 * Any of the components modified?
-	 */
-	public boolean isModified() {
-		return _modified;
-	}
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        _modified = true;
+    }
 
-	public Binding getBinding(String property) {
-		return _bindings.get(property);
-	}
+    /**
+     * Any of the components modified?
+     */
+    public boolean isModified() {
+        return _modified;
+    }
 
-	private void registerPropertyChangeListener(JComponent c) {
-		c.getAccessibleContext().addPropertyChangeListener(this);
-	}
+    public Binding getBinding(String property) {
+        return _bindings.get(property);
+    }
 
-	private void registerPropertyChangeListener(JComponent[] components) {
-		for (JComponent c : components) {
-			c.getAccessibleContext().addPropertyChangeListener(this);
-		}
-	}
+    private void registerPropertyChangeListener(JComponent c) {
+        c.getAccessibleContext().addPropertyChangeListener(this);
+    }
 
-	private boolean isPropertyNull(IValidatable bean, Binding b) {
-		try {
-			for (String property : _optComponents.keySet()) {
-				if (b.getProperty().startsWith(property)) {
-					return PropertyUtils.getProperty(bean, property) == null;
-				}
-			}
+    private void registerPropertyChangeListener(JComponent[] components) {
+        for (JComponent c : components) {
+            c.getAccessibleContext().addPropertyChangeListener(this);
+        }
+    }
 
-			return false;
-		} catch (Exception e) {
-			throw new BindingException(e);
-		}
-	}
+    private boolean isPropertyNull(IValidatable bean, Binding b) {
+        try {
+            for (String property : _optComponents.keySet()) {
+                if (b.getProperty().startsWith(property)) {
+                    return PropertyUtils.getProperty(bean, property) == null;
+                }
+            }
 
-	/**
-	 * Enables or disables all components bound to properties that begin with given prefix.
-	 */
-	public void setComponentsEnabled(String prefix, boolean enabled) {
-		for (Binding b : _bindings.values()) {
-			if (b.getProperty().startsWith(prefix)) {
-				b.setEnabled(enabled);
-			}
-		}
-	}
+            return false;
+        } catch (Exception e) {
+            throw new BindingException(e);
+        }
+    }
 
-	/**
-	 * Clear all components, set them to their default values.
-	 * Clears the _modified flag.
-	 */
-	public void clear(IValidatable bean) {
-		for (Binding b : _optComponents.values()) {
-			b.clear(bean);
-		}
+    /**
+     * Enables or disables all components bound to properties that begin with given prefix.
+     */
+    public void setComponentsEnabled(String prefix, boolean enabled) {
+        for (Binding b : _bindings.values()) {
+            if (b.getProperty().startsWith(prefix)) {
+                b.setEnabled(enabled);
+            }
+        }
+    }
 
-		for (Binding b : _bindings.values()) {
-			b.clear(bean);
-		}
+    /**
+     * Clear all components, set them to their default values.
+     * Clears the _modified flag.
+     */
+    public void clear(IValidatable bean) {
+        for (Binding b : _optComponents.values()) {
+            b.clear(bean);
+        }
 
-		_modified = false;
-	}
+        for (Binding b : _bindings.values()) {
+            b.clear(bean);
+        }
 
-	/**
-	 * Copies data from the Java Bean to the UI components.
-	 * Clears the _modified flag.
-	 */
-	public void put(IValidatable bean) {
-		for (Binding b : _optComponents.values()) {
-			b.put(bean);
-		}
+        _modified = false;
+    }
 
-		for (Binding b : _bindings.values()) {
-			if (isPropertyNull(bean, b)) {
-				b.clear(null);
-			} else {
-				b.put(bean);
-			}
-		}
+    /**
+     * Copies data from the Java Bean to the UI components.
+     * Clears the _modified flag.
+     */
+    public void put(IValidatable bean) {
+        for (Binding b : _optComponents.values()) {
+            b.put(bean);
+        }
 
-		_modified = false;
-	}
+        for (Binding b : _bindings.values()) {
+            if (isPropertyNull(bean, b)) {
+                b.clear(null);
+            } else {
+                b.put(bean);
+            }
+        }
 
-	/**
-	 * Copies data from UI components to the Java Bean and checks it's class invariants.
-	 * Clears the _modified flag.
-	 * @throws InvariantViolationException
-	 * @throws BindingException
-	 */
-	public void get(IValidatable bean) {
-		try {
-			for (Binding b : _optComponents.values()) {
-				b.get(bean);
-			}
+        _modified = false;
+    }
 
-			for (Binding b : _bindings.values()) {
-				if (!isPropertyNull(bean, b)) {
-					b.get(bean);
-				}
-			}
+    /**
+     * Copies data from UI components to the Java Bean and checks it's class invariants.
+     * Clears the _modified flag.
+     * @throws InvariantViolationException
+     * @throws BindingException
+     */
+    public void get(IValidatable bean) {
+        try {
+            for (Binding b : _optComponents.values()) {
+                b.get(bean);
+            }
 
-			bean.checkInvariants();
-			
-			for (String property : _optComponents.keySet()) {
-				IValidatable component = (IValidatable) PropertyUtils.getProperty(bean,
-						property);
+            for (Binding b : _bindings.values()) {
+                if (!isPropertyNull(bean, b)) {
+                    b.get(bean);
+                }
+            }
 
-				if (component != null) {
-					component.checkInvariants();
-				}
-			}
+            bean.checkInvariants();
 
-			_modified = false;	// XXX
-		} catch (InvariantViolationException e) {
-			e.setBinding(getBinding(e.getProperty()));
-			throw e;
-		} catch (Exception e) {
-			throw new BindingException(e);
-		} 
-	}
+            for (String property : _optComponents.keySet()) {
+                IValidatable component = (IValidatable) PropertyUtils.getProperty(bean, property);
 
-	private Bindings add(Binding b) {
-		if (_bindings.containsKey(b.getProperty())) {
-			throw new BindingException(Messages.getString("Bindings.duplicate.binding"));
-		}
+                if (component != null) {
+                    component.checkInvariants();
+                }
+            }
 
-		_bindings.put(b.getProperty(), b);
-		return this;
-	}
+            _modified = false; // XXX
+        } catch (InvariantViolationException e) {
+            e.setBinding(getBinding(e.getProperty()));
+            throw e;
+        } catch (Exception e) {
+            throw new BindingException(e);
+        }
+    }
 
-	/**
-	 * Add an optional (nullable) Java Bean component of type clazz.
-	 */
-	public Bindings addOptComponent(String property, Class<? extends IValidatable> clazz, JToggleButton c,
-			boolean enabledByDefault) {
-		Binding b = new OptComponentBinding(this, property, clazz, c, enabledByDefault);
+    private Bindings add(Binding b) {
+        if (_bindings.containsKey(b.getProperty())) {
+            throw new BindingException(Messages.getString("Bindings.duplicate.binding"));
+        }
 
-		if (_optComponents.containsKey(property)) {
-			throw new BindingException(Messages.getString("Bindings.duplicate.binding"));
-		}
+        _bindings.put(b.getProperty(), b);
+        return this;
+    }
 
-		_optComponents.put(property, b);
-		return this;
-	}
+    /**
+     * Add an optional (nullable) Java Bean component of type clazz.
+     */
+    public Bindings addOptComponent(
+            String property, Class<? extends IValidatable> clazz, JToggleButton c, boolean enabledByDefault) {
+        Binding b = new OptComponentBinding(this, property, clazz, c, enabledByDefault);
 
-	/**
-	 * Add an optional (nullable) Java Bean component of type clazz.
-	 */
-	public Bindings addOptComponent(String property, Class<? extends IValidatable> clazz, JToggleButton c) {
-		return addOptComponent(property, clazz, c, false);
-	}
+        if (_optComponents.containsKey(property)) {
+            throw new BindingException(Messages.getString("Bindings.duplicate.binding"));
+        }
 
-	/**
-	 * Handles JEditorPane, JTextArea, JTextField
-	 */
-	public Bindings add(String property, JTextComponent c, String defaultValue) {
-		registerPropertyChangeListener(c);
-		return add(new JTextComponentBinding(property, c, defaultValue));
-	}
+        _optComponents.put(property, b);
+        return this;
+    }
 
-	/**
-	 * Handles JEditorPane, JTextArea, JTextField
-	 */
-	public Bindings add(String property, JTextComponent c) {
-		registerPropertyChangeListener(c);
-		return add(new JTextComponentBinding(property, c, ""));
-	}
+    /**
+     * Add an optional (nullable) Java Bean component of type clazz.
+     */
+    public Bindings addOptComponent(String property, Class<? extends IValidatable> clazz, JToggleButton c) {
+        return addOptComponent(property, clazz, c, false);
+    }
 
-	/**
-	 * Handles JToggleButton, JCheckBox 
-	 */
-	public Bindings add(String property, JToggleButton c, boolean defaultValue) {
-		registerPropertyChangeListener(c);
-		return add(new JToggleButtonBinding(property, c, defaultValue));
-	}
+    /**
+     * Handles JEditorPane, JTextArea, JTextField
+     */
+    public Bindings add(String property, JTextComponent c, String defaultValue) {
+        registerPropertyChangeListener(c);
+        return add(new JTextComponentBinding(property, c, defaultValue));
+    }
 
-	/**
-	 * Handles JToggleButton, JCheckBox
-	 */
-	public Bindings add(String property, JToggleButton c) {
-		registerPropertyChangeListener(c);
-		return add(new JToggleButtonBinding(property, c, false));
-	}
+    /**
+     * Handles JEditorPane, JTextArea, JTextField
+     */
+    public Bindings add(String property, JTextComponent c) {
+        registerPropertyChangeListener(c);
+        return add(new JTextComponentBinding(property, c, ""));
+    }
 
-	/**
-	 * Handles JRadioButton
-	 */
-	public Bindings add(String property, JRadioButton[] cs, int defaultValue) {
-		registerPropertyChangeListener(cs);
-		return add(new JRadioButtonBinding(property, cs, defaultValue));
-	}
-	
-	/**
-	 * Handles JRadioButton
-	 */
-	public Bindings add(String property, JRadioButton[] cs) {
-		registerPropertyChangeListener(cs);
-		return add(new JRadioButtonBinding(property, cs, 0));
-	}
+    /**
+     * Handles JToggleButton, JCheckBox
+     */
+    public Bindings add(String property, JToggleButton c, boolean defaultValue) {
+        registerPropertyChangeListener(c);
+        return add(new JToggleButtonBinding(property, c, defaultValue));
+    }
 
-	/**
-	 * Handles JTextArea
-	 */
-	public Bindings add(String property, JTextArea textArea, String defaultValue) {
-		registerPropertyChangeListener(textArea);
-		return add(new JTextComponentBinding(property, textArea, defaultValue));
-	}
+    /**
+     * Handles JToggleButton, JCheckBox
+     */
+    public Bindings add(String property, JToggleButton c) {
+        registerPropertyChangeListener(c);
+        return add(new JToggleButtonBinding(property, c, false));
+    }
 
-	/**
-	 * Handles JTextArea lists
-	 */
-	public Bindings add(String property, JTextArea textArea) {
-		registerPropertyChangeListener(textArea);
-		return add(new JTextAreaBinding(property, textArea));
-	}
+    /**
+     * Handles JRadioButton
+     */
+    public Bindings add(String property, JRadioButton[] cs, int defaultValue) {
+        registerPropertyChangeListener(cs);
+        return add(new JRadioButtonBinding(property, cs, defaultValue));
+    }
 
-	/**
-	 * Handles Optional JTextArea lists
-	 */
-	public Bindings add(String property, String stateProperty, 
-			JToggleButton button, JTextArea textArea) {
-		registerPropertyChangeListener(button);
-		registerPropertyChangeListener(textArea);
-		return add(new OptJTextAreaBinding(property, stateProperty, button, textArea));
-	}
+    /**
+     * Handles JRadioButton
+     */
+    public Bindings add(String property, JRadioButton[] cs) {
+        registerPropertyChangeListener(cs);
+        return add(new JRadioButtonBinding(property, cs, 0));
+    }
 
-	/**
-	 * Handles JList
-	 */
-	public <T> Bindings add(String property, JList<T> list) {
-		registerPropertyChangeListener(list);
-		return add(new JListBinding<T>(property, list));
-	}
+    /**
+     * Handles JTextArea
+     */
+    public Bindings add(String property, JTextArea textArea, String defaultValue) {
+        registerPropertyChangeListener(textArea);
+        return add(new JTextComponentBinding(property, textArea, defaultValue));
+    }
 
-	/**
-	 * Handles JComboBox
-	 */
-	public <T> Bindings add(String property, JComboBox<T> combo, int defaultValue) {
-		combo.addActionListener(this);
-		return add(new JComboBoxBinding<T>(property, combo, defaultValue));
-	}
+    /**
+     * Handles JTextArea lists
+     */
+    public Bindings add(String property, JTextArea textArea) {
+        registerPropertyChangeListener(textArea);
+        return add(new JTextAreaBinding(property, textArea));
+    }
 
-	/**
-	 * Handles JComboBox
-	 */
-	public <T> Bindings add(String property, JComboBox<T> combo) {
-		combo.addActionListener(this);
-		return add(new JComboBoxBinding<T>(property, combo, 0));
-	}
+    /**
+     * Handles Optional JTextArea lists
+     */
+    public Bindings add(String property, String stateProperty, JToggleButton button, JTextArea textArea) {
+        registerPropertyChangeListener(button);
+        registerPropertyChangeListener(textArea);
+        return add(new OptJTextAreaBinding(property, stateProperty, button, textArea));
+    }
+
+    /**
+     * Handles JList
+     */
+    public <T> Bindings add(String property, JList<T> list) {
+        registerPropertyChangeListener(list);
+        return add(new JListBinding<T>(property, list));
+    }
+
+    /**
+     * Handles JComboBox
+     */
+    public <T> Bindings add(String property, JComboBox<T> combo, int defaultValue) {
+        combo.addActionListener(this);
+        return add(new JComboBoxBinding<T>(property, combo, defaultValue));
+    }
+
+    /**
+     * Handles JComboBox
+     */
+    public <T> Bindings add(String property, JComboBox<T> combo) {
+        combo.addActionListener(this);
+        return add(new JComboBoxBinding<T>(property, combo, 0));
+    }
 }
