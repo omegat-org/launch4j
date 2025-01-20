@@ -209,7 +209,7 @@ class Cmd {
     }
 
     public void exec(Log log) throws ExecException {
-        String[] cmd = (String[]) _cmd.toArray(new String[_cmd.size()]);
+        String[] cmd = _cmd.toArray(new String[0]);
         Util.exec(cmd, log);
     }
 }

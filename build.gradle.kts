@@ -169,6 +169,10 @@ nexusPublishing.repositories {
     }
 }
 
+spotbugs {
+    reportLevel = com.github.spotbugs.snom.Confidence.valueOf("HIGH")
+}
+
 spotless {
     java {
         palantirJavaFormat()

@@ -41,6 +41,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 import net.sf.launch4j.config.CharsetID;
 import net.sf.launch4j.config.Config;
@@ -181,7 +182,7 @@ public class RcBuilder {
 
         try {
             os = new FileOutputStream(file);
-            osw = new OutputStreamWriter(os, "ISO-8859-1");
+            osw = new OutputStreamWriter(os, StandardCharsets.ISO_8859_1);
             w = new BufferedWriter(osw);
             w.write(_sb.toString());
         } finally {
@@ -203,7 +204,8 @@ public class RcBuilder {
         try {
             output = new FileOutputStream(file);
             kanji = new KanjiEscapeOutputStream(output);
-            writer = new OutputStreamWriter(kanji);
+            // kanji contains only ASCII by escape
+            writer = new OutputStreamWriter(kanji, StandardCharsets.US_ASCII);
             w = new BufferedWriter(writer);
             w.write(_sb.toString());
         } finally {

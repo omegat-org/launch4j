@@ -46,6 +46,7 @@ import java.io.Reader;
 import java.io.Writer;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.nio.charset.StandardCharsets;
 import java.util.Properties;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -63,9 +64,9 @@ public class Util {
 
     public static Properties getProperties() throws IOException {
         Properties props = new Properties();
-        InputStream in = Main.class.getClassLoader().getResourceAsStream(Launch4jProperties);
-        props.load(in);
-        in.close();
+        try (InputStream in = Main.class.getClassLoader().getResourceAsStream(Launch4jProperties)) {
+            props.load(in);
+        }
         return props;
     }
 
@@ -117,52 +118,44 @@ public class Util {
     }
 
     public static void exec(String[] cmd, Log log) throws ExecException {
-        BufferedReader is = null;
+        if (WINDOWS_OS) {
+            for (int i = 0; i < cmd.length; i++) {
+                cmd[i] = cmd[i].replaceAll("/", "\\\\");
+            }
+        }
         try {
-            if (WINDOWS_OS) {
-                for (int i = 0; i < cmd.length; i++) {
-                    cmd[i] = cmd[i].replaceAll("/", "\\\\");
-                }
-            }
             Process p = Runtime.getRuntime().exec(cmd);
-            is = new BufferedReader(new InputStreamReader(p.getErrorStream()));
-            String line;
-            int errLine = -1;
-            Pattern pattern = Pattern.compile(":\\d+:");
-            while ((line = is.readLine()) != null) {
-                log.append(line);
-                Matcher matcher = pattern.matcher(line);
-                if (matcher.find()) {
-                    errLine = Integer.valueOf(line.substring(matcher.start() + 1, matcher.end() - 1))
-                            .intValue();
-                    break;
+            try (BufferedReader is = new BufferedReader(new InputStreamReader(p.getErrorStream(), StandardCharsets.UTF_8))) {
+                String line;
+                int errLine = -1;
+                Pattern pattern = Pattern.compile(":\\d+:");
+                while ((line = is.readLine()) != null) {
+                    log.append(line);
+                    Matcher matcher = pattern.matcher(line);
+                    if (matcher.find()) {
+                        errLine = Integer.parseInt(line.substring(matcher.start() + 1, matcher.end() - 1));
+                        break;
+                    }
                 }
-            }
-            is.close();
-            p.waitFor();
-            if (errLine != -1) {
-                StringBuffer sb = new StringBuffer(Messages.getString("Util.exec.failed"));
-                AppendCommandLine(sb, cmd);
-                throw new ExecException(sb.toString(), errLine);
+                p.waitFor();
+                if (errLine != -1) {
+                    StringBuilder sb = new StringBuilder(Messages.getString("Util.exec.failed"));
+                    AppendCommandLine(sb, cmd);
+                    throw new ExecException(sb.toString(), errLine);
+                }
             }
             if (p.exitValue() != 0) {
-                StringBuffer sb = new StringBuffer(Messages.getString("Util.exec.failed"));
-                sb.append(" (");
-                sb.append(p.exitValue());
-                sb.append(')');
+                StringBuilder sb = new StringBuilder(Messages.getString("Util.exec.failed"));
+                sb.append(" (").append(p.exitValue()).append(')');
                 AppendCommandLine(sb, cmd);
                 throw new ExecException(sb.toString());
             }
-        } catch (IOException e) {
-            close(is);
-            throw new ExecException(e);
-        } catch (InterruptedException e) {
-            close(is);
+        } catch (IOException | InterruptedException e) {
             throw new ExecException(e);
         }
     }
 
-    private static void AppendCommandLine(StringBuffer sb, String[] cmd) {
+    private static void AppendCommandLine(StringBuilder sb, String[] cmd) {
         sb.append(": ");
         for (int i = 0; i < cmd.length; i++) {
             sb.append(cmd[i]);
@@ -213,6 +206,6 @@ public class Util {
     }
 
     public static boolean delete(File f) {
-        return (f != null) ? f.delete() : false;
+        return f != null && f.delete();
     }
 }
