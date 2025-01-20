@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1adbc4bb-44f9-4f98-8be1-ed2c5323a80e" name="Changes" comment="Add README and update license&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;">
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+    <list default="true" id="1adbc4bb-44f9-4f98-8be1-ed2c5323a80e" name="Changes" comment="Update intellij files&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -286,6 +286,8 @@
       <workItem from="1737195578941" duration="1023000" />
       <workItem from="1737250820502" duration="15582000" />
       <workItem from="1737267619658" duration="6613000" />
+      <workItem from="1737292570680" duration="214000" />
+      <workItem from="1737334264639" duration="90000" />
     </task>
     <task id="LOCAL-00001" summary="Support build on linux-aarch64&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;">
       <option name="closed" value="true" />
@@ -511,7 +513,23 @@
       <option name="project" value="LOCAL" />
       <updated>1737288857416</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Update intellij files&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;">
+      <option name="closed" value="true" />
+      <created>1737289867196</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1737289867196</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Update intellij files&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;">
+      <option name="closed" value="true" />
+      <created>1737292765739</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1737292765739</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -565,6 +583,7 @@
     <MESSAGE value="chore: clean unused version reference &#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;" />
     <MESSAGE value="Version to be &lt;origin&gt;.&lt;forked&gt; now as 3.50.1&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;" />
     <MESSAGE value="Add README and update license&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add README and update license&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;" />
+    <MESSAGE value="Update intellij files&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update intellij files&#10;&#10;Signed-off-by: miurahr &lt;miurahr@linux.com&gt;" />
   </component>
 </project>
