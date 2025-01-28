@@ -1,5 +1,9 @@
 # Changelog (forked)
 
+## 3.51
+
+- Change version scheme to (major).(minor) as tweak for the gradle-launch4j 
+
 ## 3.50.2
 
 - Change workdir package name mappings for platforms
@@ -10,3 +14,4 @@
 - Fork original project
 - Ticket #225 Configurable .ini file name (Antonin Delpeuch).
 - Migrate to the Gradle build system
+
