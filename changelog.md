@@ -1,5 +1,9 @@
 # Changelog (forked)
 
+## 3.52
+
+- update workdir jar classifier
+
 ## 3.51
 
 - Change version scheme to (major).(minor) as tweak for the gradle-launch4j 
