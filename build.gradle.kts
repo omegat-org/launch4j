@@ -70,7 +70,7 @@ platforms.forEach { platform ->
     tasks.register<Jar>(platformJarTaskName) {
         group = "Packaging"
         description = "Package binaries for $platform"
-        archiveClassifier.set(platform)
+        archiveClassifier.set("workdir-${platform}")
         into("launch4j-workdir-${platform}/") {
             from(layout.projectDirectory.dir("${workdir}/platforms/${platform}"))
             from(layout.projectDirectory.dir("${workdir}/common"))
