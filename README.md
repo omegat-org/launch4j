@@ -7,7 +7,10 @@ This is the forked version that has changes;
 - Migrate to a Gradle build system
 - Drop files not published to Maven Central
 - Dependencies updates
-- Tweak for minor code
+- Support running on ARM64 Linux
+- Publish sourceJar and javadocJar on Maven Central
+- Fix Util#exec not to use default character encoding for security
+- Tweak code styles
 
 ## Features
 
@@ -40,7 +43,7 @@ This is the forked version that has changes;
 
 - group id: "org.omegat"
 - artivact id: "launch4j"
-- flavors: "core", "workdir-linux", "workdir-linux-x64", "workdir-linux-aarch64", "workdir-macosx-x86", "workdir-win32"
+- classifiers: "core", "workdir-linux", "workdir-linux64", "workdir-linux32", "workdir-macosx-x86", "workdir-win32"
 
 ## Copyright and License
 
