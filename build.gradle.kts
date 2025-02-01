@@ -12,11 +12,12 @@ plugins {
 val workdir = "src/workdir"
 
 val platforms = listOf(
-    "linux32", // linux i686
-    "linux64", // linux amd64
-    "linux",   // linux aarch64
-    "macosx-x86",  // mac amd64
-    "win32"  // windows 32bit
+    // listOf(platform folder name, jar classifier)
+    listOf("linux-x86", "linux32"), // linux i686
+    listOf("linux-x64", "linux64"), // linux amd64
+    listOf("linux-aarch64", "linux"), // linux aarch64
+    listOf("macosx-x86", "mac"),    // mac amd64
+    listOf("windows-x86", "win32")  // windows 32bit
 )
 
 repositories {
@@ -64,30 +65,27 @@ tasks.jar {
     from(rootProject.layout.projectDirectory.file("LICENSE.txt"))
 }
 
+fun platformJarTaskName(ident: String) : String {
+    return "jar${ident.split("-").map { it.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }} .joinToString("") }"
+}
+
+val platformJar = tasks.register("platformJar") {
+    group = "build"
+    description = "Package all platform-specific binaries into JARs"
+}
+tasks.getByPath("assemble").dependsOn(platformJar)
+
 platforms.forEach { platform ->
-    val platformJarTaskName = "jar${platform.replace("-", "")
-        .replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }}"
-    tasks.register<Jar>(platformJarTaskName) {
+    tasks.register<Jar>(platformJarTaskName(platform[0])) {
         group = "Packaging"
-        description = "Package binaries for $platform"
-        if (platform.startsWith("mac")) {
-            // for backward compatibility
-            archiveClassifier.set("workdir-mac")
-        } else {
-            archiveClassifier.set("workdir-${platform}")
-        }
-        into("launch4j-workdir-${platform}/") {
-            from(layout.projectDirectory.dir("${workdir}/platforms/${platform}"))
+        description = "Package binaries for ${platform[0]}"
+        archiveClassifier.set("workdir-${platform[1]}")
+        into("launch4j-workdir-${platform[0]}/") {
+            from(layout.projectDirectory.dir("${workdir}/platforms/${platform[0]}"))
             from(layout.projectDirectory.dir("${workdir}/common"))
         }
     }
-}
-
-tasks.register("platformJar") {
-    group = "build"
-    description = "Package all platform-specific binaries into JARs"
-    dependsOn(platforms.map { "jar${it.replace("-", "")
-        .replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }}" })
+    tasks.getByPath("platformJar").dependsOn(tasks.named(platformJarTaskName(platform[0])))
 }
 
 publishing {
@@ -99,9 +97,8 @@ publishing {
             classifier = "core"
         }
         platforms.forEach { platform ->
-            artifact(tasks.named("jar${platform.replace("-", "")
-                .replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }}")) {
-                classifier = "workdir-${platform}"
+            artifact(tasks.named(platformJarTaskName(platform[0]))) {
+                classifier = "workdir-${platform[1]}"
             }
         }
 
