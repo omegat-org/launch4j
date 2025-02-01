@@ -1,6 +1,9 @@
 # Changelog (forked)
 
-## 3.54
+## 3.55
+- fix a workdir binary folder names
+
+## 3.54(broken)
 - fix a workdir jar classifier for macosx-x86
 - refactor build.gradle.kts for workdir tasks
 
@@ -18,4 +21,3 @@
 - Fork original project
 - Ticket #225 Configurable .ini file name (Antonin Delpeuch).
 - Migrate to the Gradle build system
-
