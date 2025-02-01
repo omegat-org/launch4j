@@ -1,7 +1,8 @@
 # Changelog (forked)
 
-## 3.53
+## 3.54
 - fix a workdir jar classifier for macosx-x86
+- refactor build.gradle.kts for workdir tasks
 
 ## 3.52
 - update workdir jar classifier
