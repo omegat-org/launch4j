@@ -14,7 +14,7 @@ val workdir = "src/workdir"
 val platforms = listOf(
     // listOf(platform folder name, jar classifier)
     listOf("linux-x86", "linux32"), // linux i686
-    listOf("linux-x64", "linux64"), // linux amd64
+    listOf("linux-amd64", "linux64"), // linux amd64
     listOf("linux-aarch64", "linux"), // linux aarch64
     listOf("macosx-x86", "mac"),    // mac amd64
     listOf("windows-x86", "win32")  // windows 32bit
